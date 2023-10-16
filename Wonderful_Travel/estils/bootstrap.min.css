@@ -216,6 +216,11 @@ figure {
 img,svg {
     vertical-align:middle
 }
+.imatge-desti{
+    width: 70%;
+    border-radius: 5%;
+}
+
 table {
     caption-side:bottom;
     border-collapse:collapse
@@ -975,7 +980,7 @@ progress {
     }
     .col-md-5 {
         flex:0 0 auto;
-        width:35.66666667%
+        width:32.7%
     }
     .col-md-6 {
         flex:0 0 auto;

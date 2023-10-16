@@ -13,7 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="estils/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -33,7 +33,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
+    <link href="estils/form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
     
@@ -104,11 +104,11 @@
             <div class="col-md-5">
               <label for="desti" class="form-label">Desti</label>
               <select class="form-select" id="desti" required>
-                <option>Europa</option>
-                <option>Asia</option>
-                <option>Amèrica</option>
-                <option>Àfrica</option>
-                <option>Oceania</option>
+                <option value="europa">Europa</option>
+                <option value="asia">Asia</option>
+                <option value="america">Amèrica</option>
+                <option value="africa">Àfrica</option>
+                <option value="oceania">Oceania</option>
               </select>
               </div>
 
@@ -116,11 +116,15 @@
                 <label for="destiPais" class="form-label"><br></label>
                 <select class="form-select" id="destiPais" required>
                   <!-- Poner codigo php / js que identifique el continente y despliega los paises disponibles -->
+                  
                 </select>
               </div>
-            </div>
 
-            <br>
+              <div class="col-md-5">
+                <label for="imgDesti" class="form-label"><br></label>
+                <img src="berlin.jpg" alt="Imatge de berlin" class="imatge-desti">
+              </div>
+            </div>
 
             <div class="col-sm-6">
               <label for="preu" class="form-label">Preu</label>
@@ -138,7 +142,7 @@
 
             <div class="col-12">
               <label for="telf" class="form-label">Telèfon</label>
-              <input type="text" class="form-control" id="telf" placeholder="" required>
+              <input type="tel" class="form-control" id="telf" placeholder="" required>
             </div>
 
             <br>
@@ -164,10 +168,8 @@
 
   </footer>
 </div>
-
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="form-validation.js"></script>
+      <script src="controlador/form-validation.js"></script>
   </body>
 </html>
