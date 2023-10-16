@@ -49,7 +49,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 32,
-											"top": -16,
+											"top": -32,
 											"height": 13
 										},
 										{
@@ -60,7 +60,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 1213,
-											"top": 143,
+											"top": 135,
 											"width": 111,
 											"height": 13,
 											"text": "usuari"
@@ -74,7 +74,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 32,
-											"top": -16,
+											"top": -32,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -88,14 +88,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 32,
-											"top": -16,
+											"top": -32,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1208,
-									"top": 136,
+									"top": 128,
 									"width": 121,
 									"height": 25,
 									"stereotypeLabel": {
@@ -132,7 +132,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 166,
+											"top": 158,
 											"width": 111,
 											"height": 13,
 											"text": "+nomPersona",
@@ -149,7 +149,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 181,
+											"top": 173,
 											"width": 111,
 											"height": 13,
 											"text": "+telfPersona",
@@ -166,7 +166,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 196,
+											"top": 188,
 											"width": 111,
 											"height": 13,
 											"text": "+numPersones",
@@ -183,7 +183,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 211,
+											"top": 203,
 											"width": 111,
 											"height": 13,
 											"text": "+descompte",
@@ -192,7 +192,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 1208,
-									"top": 161,
+									"top": 153,
 									"width": 121,
 									"height": 68
 								},
@@ -207,7 +207,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1208,
-									"top": 229,
+									"top": 221,
 									"width": 121,
 									"height": 10
 								},
@@ -223,7 +223,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": -8,
+									"top": -16,
 									"width": 10,
 									"height": 10
 								},
@@ -239,7 +239,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": -8,
+									"top": -16,
 									"width": 10,
 									"height": 10
 								}
@@ -247,7 +247,7 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 1208,
-							"top": 136,
+							"top": 128,
 							"width": 121,
 							"height": 103,
 							"nameCompartment": {
@@ -644,7 +644,7 @@
 											"top": 302,
 											"width": 87,
 											"height": 13,
-											"text": "+usuari",
+											"text": "+dadesUsuari",
 											"horizontalAlignment": 0
 										},
 										{
@@ -661,7 +661,7 @@
 											"top": 317,
 											"width": 87,
 											"height": 13,
-											"text": "+dataViatge",
+											"text": "+dadesViatge",
 											"horizontalAlignment": 0
 										},
 										{
@@ -673,6 +673,7 @@
 											"model": {
 												"$ref": "AAAAAAGK8JJjHEU3/jk="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1221,
 											"top": 332,
@@ -690,6 +691,7 @@
 											"model": {
 												"$ref": "AAAAAAGK8JKGRkU+P/Q="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1221,
 											"top": 347,
@@ -703,7 +705,7 @@
 									"left": 1216,
 									"top": 297,
 									"width": 97,
-									"height": 68
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -715,6 +717,9 @@
 										"$ref": "AAAAAAGK8JH5YkT+lVU="
 									},
 									"font": "Arial;13;0",
+									"left": 1336,
+									"top": 335,
+
 									"left": 1216,
 									"top": 365,
 									"width": 97,
@@ -1900,8 +1905,10 @@
 							"_parent": {
 								"$ref": "AAAAAAGK8JH5YkT+lVU="
 							},
+							"name": "dadesUsuari"
 							"name": "usuari",
 							"type": ""
+
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1909,8 +1916,12 @@
 							"_parent": {
 								"$ref": "AAAAAAGK8JH5YkT+lVU="
 							},
+
+							"name": "dadesViatge"
+
 							"name": "dataViatge",
 							"type": ""
+
 						},
 						{
 							"_type": "UMLAttribute",
