@@ -18,3 +18,11 @@
       }, false)
     })
 })()
+
+function canviDesti() {
+  let desti = document.getElementById("desti");
+
+  if(desti == "europa"){
+    //Insertar como : <option value="alemania">Alemanya</option>
+  }
+}
