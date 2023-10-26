@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Activity1",
+			"name": "Diagrama",
 			"ownedElements": [
 				{
 					"_type": "UMLActivityDiagram",
@@ -913,9 +913,9 @@
 											"font": "Arial;13;0",
 											"left": 128,
 											"top": -64,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -1403,9 +1403,9 @@
 											"font": "Arial;13;0",
 											"left": 160,
 											"top": 624,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -1703,9 +1703,9 @@
 											"font": "Arial;13;0",
 											"left": 192,
 											"top": 624,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -1991,9 +1991,9 @@
 											"font": "Arial;13;0",
 											"left": 512,
 											"top": 640,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -2186,9 +2186,9 @@
 											"font": "Arial;13;0",
 											"left": 544,
 											"top": 640,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -2381,9 +2381,9 @@
 											"font": "Arial;13;0",
 											"left": 336,
 											"top": 496,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -2786,9 +2786,9 @@
 											"font": "Arial;13;0",
 											"left": -112,
 											"top": -16,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -2886,9 +2886,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -112,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -2985,9 +2985,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"top": -112,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -3086,9 +3086,9 @@
 											"font": "Arial;13;0",
 											"left": -64,
 											"top": -64,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -4088,9 +4088,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -48,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -4189,9 +4189,9 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -16,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -4291,9 +4291,9 @@
 											"font": "Arial;13;0",
 											"left": -32,
 											"top": -48,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -4393,9 +4393,9 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -32,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -4495,9 +4495,9 @@
 											"font": "Arial;13;0",
 											"left": -32,
 											"top": -48,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -5444,9 +5444,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -32,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
@@ -5545,9 +5545,9 @@
 											"font": "Arial;13;0",
 											"left": -176,
 											"top": -16,
-											"width": 86,
+											"width": 92,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from Diagrama)"
 										},
 										{
 											"_type": "LabelView",
