@@ -23,11 +23,11 @@ function myOnLoad() {
   canviDesti()
  }
 
+ let desti;
 
 function canviDesti(desti) {
-  var desti = document.getElementById("desti").value;
+  desti = document.getElementById("desti").value;
   let destiPais = document.getElementById("destiPais");
-
   let arrayEuropa = ['Espanya', 'Italia', 'França','Alemanya','Grècia','Portugal']
   let arrayAmerica = ['Estats Units', 'Canadà', 'Mèxic','Brasil','Argentina','Perú']
   let arrayAsia = ['Japó', 'Xina', 'Corea del Sud','Vietnam','Filipines','Tailàndia']
