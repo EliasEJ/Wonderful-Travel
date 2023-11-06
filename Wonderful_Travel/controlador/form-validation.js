@@ -42,31 +42,31 @@ function canviDesti(desti) {
     case 'europa':
       destiPais.innerHTML = '';
       for (let i = 0; i < arrayEuropa.length; i++) {
-        destiPais.innerHTML += '<option value="' + arrayEuropa[i] + '">' + arrayEuropa[i] + '</option>';
+        destiPais.innerHTML += '<option value="' + arrayEuropa[i] + '" id="pais">' + arrayEuropa[i] + '</option>';
       }
       break;
     case 'america':
       destiPais.innerHTML = '';
       for (let i = 0; i < arrayAmerica.length; i++) {
-        destiPais.innerHTML += '<option value="' + arrayAmerica[i] + '">' + arrayAmerica[i] + '</option>';
+        destiPais.innerHTML += '<option value="' + arrayAmerica[i] + '" id="pais">' + arrayAmerica[i] + '</option>';
       }
       break;
     case 'asia':
       destiPais.innerHTML = '';
       for (let i = 0; i < arrayAsia.length; i++) {
-        destiPais.innerHTML += '<option value="' + arrayAsia[i] + '">' + arrayAsia[i] + '</option>';
+        destiPais.innerHTML += '<option value="' + arrayAsia[i] + '" id="pais">' + arrayAsia[i] + '</option>';
       }
       break;
     case 'africa':
       destiPais.innerHTML = '';
       for (let i = 0; i < arrayAfrica.length; i++) {
-        destiPais.innerHTML += '<option value="' + arrayAfrica[i] + '">' + arrayAfrica[i] + '</option>';
+        destiPais.innerHTML += '<option value="' + arrayAfrica[i] + '" id="pais">' + arrayAfrica[i] + '</option>';
       }
       break;
     case 'oceania':
       destiPais.innerHTML = '';
       for (let i = 0; i < arrayOceania.length; i++) {
-        destiPais.innerHTML += '<option value="' + arrayOceania[i] + '">' + arrayOceania[i] + '</option>';
+        destiPais.innerHTML += '<option value="' + arrayOceania[i] + '" id="pais">' + arrayOceania[i] + '</option>';
       }
       break;
   }

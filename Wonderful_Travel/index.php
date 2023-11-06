@@ -1,3 +1,4 @@
+<?php require_once 'model/consultes_sql.php'?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -107,15 +108,15 @@
             
             <div class="col-md-5">
               <label for="destiLabel" class="form-label">Desti</label>
-              <select class="form-select" id="desti" required onchange="canviDesti()">
-                <option value="nada">Selecciona desti</option>
-                <option value="europa">Europa</option>
-                <option value="asia">Asia</option>
-                <option value="america">Amèrica</option>
-                <option value="africa">Àfrica</option>
-                <option value="oceania">Oceania</option>
+              <select class="form-select" name="desti" id="desti" required onchange="canviDesti(), this.form.submit()">
+                <option value="">Selecciona desti</option>
+                <option value="europa" <?php if(isset($_GET["desti"]) && $_GET["desti"] == "europa") echo 'selected'; ?>>Europa</option>
+                <option value="asia" <?php if(isset($_GET["desti"]) && $_GET["desti"] == "asia") echo 'selected'; ?>>Asia</option>
+                <option value="america" <?php if(isset($_GET["desti"]) && $_GET["desti"] == "america") echo 'selected'; ?>>Amèrica</option>
+                <option value="africa" <?php if(isset($_GET["desti"]) && $_GET["desti"] == "africa") echo 'selected'; ?>>Àfrica</option>
+                <option value="oceania" <?php if(isset($_GET["desti"]) && $_GET["desti"] == "oceania") echo 'selected'; ?>>Oceania</option>
               </select>
-              </div>
+            </div>
 
               <div class="col-md-5">
                 <label for="destiPaisLabel" class="form-label"><br></label>
@@ -125,7 +126,8 @@
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                <?php ?>
+                <?php //imatgePais();?>
+                <img src="<?php //imatgePais();?>" id="imgDesti" class="img-fluid" alt="Imatge destí">
               </div>
             </div>
 
