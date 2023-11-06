@@ -124,7 +124,7 @@
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                <img src="berlin.jpg" alt="Imatge de berlin" class="imatge-desti">
+                <?php ?>
               </div>
             </div>
 
