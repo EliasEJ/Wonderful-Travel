@@ -37,63 +37,13 @@
   </head>
 
   <body class="bg-light">
-
-    <script>
-      // for time;
-      const deg = 6; 
-      // 360 / (12 * 5);
-
-      const hr = document.querySelector('#hr');
-      const mn = document.querySelector('#mn');
-      const sc = document.querySelector('#sc');
-
-      setInterval(() => {
-          
-          let day = new Date();
-          let hh = day.getHours() * 30;
-          let mm = day.getMinutes() * deg;
-          let ss = day.getSeconds() * deg;
-          let msec = day.getMilliseconds();
-          
-          // VERY IMPORTANT STEP:
-          
-          hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
-          mn.style.transform = `rotateZ(${mm}deg)`;
-          sc.style.transform = `rotateZ(${ss}deg)`;
-          
-          // gives the smooth transitioning effect, but there's a bug here!
-          // sc.style.transition = `1s`;
-
-      })
-      </script>
     
 <div class="container">
   <main>
     <div class="py-5 text-center">
       <h2>Wonderful Travel</h2>
     </div>
-
-    <div class="clock">
-
-      <div class="hour">
-          <div class="hr" id="hr" style="transform: rotateZ(447deg);">
-
-          </div>
-      </div>
-
-      <div class="min">
-          <div class="mn" id="mn" style="transform: rotateZ(324deg);">
-
-          </div>
-      </div>
-
-      <div class="sec">
-          <div class="sc" id="sc" style="transform: rotateZ(276deg);">
-
-          </div>
-      </div>
-
-  </div>
+    <canvas id="canvas_reloj" class="reloj"></canvas>
 
     <div class="row g-5">
       <div class="col-md-5 col-lg-4 order-md-last">
@@ -152,7 +102,7 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="data" class="form-label">Data</label>
-              <input type="date" class="form-control" id="data" value="" required oninput="validarData()">
+              <input type="date" class="form-control" id="data" value="" required oninput='validarData()'>
             </div>
             
             <div class="col-md-5">
