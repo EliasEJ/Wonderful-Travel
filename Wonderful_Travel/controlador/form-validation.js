@@ -72,3 +72,19 @@ function canviDesti(desti) {
   }
 
 }
+
+function validarData() {
+  let dataSeleccionada = document.getElementById('data').value;
+  let data = new Date(dataSeleccionada);
+  let diaSetmana = data.getDay();
+  
+  if(fecha < Date.now()) {
+    document.getElementById('data').value = '';
+    alert('Selecciona una data vàlida. No es pot seleccionar una data anterior a la data actual.');
+  }
+
+  if (diaSetmana === 1 || diaSetmana === 3 || diaSetmana === 5) {
+    document.getElementById('data').value = '';
+    alert('Selecciona una data vàlida. Els dies dilluns, dimecres i divendres estan deshabilitats.');
+  }
+}
