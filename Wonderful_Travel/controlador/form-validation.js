@@ -89,6 +89,22 @@ function validarData() {
   }
 }
 
+function fetchImage() {
+  var destiPais = document.getElementById('destiPais').value;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'fetch_image.php?destiPais=' + encodeURIComponent(destiPais), true);
+  xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200)
+          document.getElementById('imageContainer').innerHTML = xhr.responseText;
+  }
+  xhr.send();
+
+  // Actualiza la URL
+  var url = new URL(window.location.href);
+  url.searchParams.set('destiPais', destiPais);
+  window.history.replaceState({}, '', url);
+}
+
 
 const deg = 6;
 const hour = document.querySelector(".hour");

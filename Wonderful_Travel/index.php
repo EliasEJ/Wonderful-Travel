@@ -44,13 +44,13 @@
       <div class="py-5 text-center">
         <h2>Wonderful Travel</h2>
       </div>
-        <div class="clock">
-          <div class="hour"></div>
-          <div class="min"></div>
-          <div class="sec"></div>
-        </div>
-        <div class="switch-cont">
-          <button class="switch-btn"> Light </button>
+      <div class="clock">
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+      </div>
+      <div class="switch-cont">
+        <button class="switch-btn"> Light </button>
       </div>
 
       <div class="row g-5">
@@ -127,16 +127,13 @@
 
               <div class="col-md-5">
                 <label for="destiPaisLabel" class="form-label"><br></label>
-                <select class="form-select" id="destiPais" required>
+                <select class="form-select" id="destiPais" required onchange="fetchImage()">
                 </select>
               </div>
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                <?php //imatgePais();
-                ?>
-                <img src="<?php //imatgePais();
-                          ?>" id="imgDesti" class="img-fluid" alt="Imatge destí">
+                
               </div>
             </div>
 
@@ -189,3 +186,4 @@
 </body>
 
 </html>
+<?require "model/consultes_sql.php"?>
