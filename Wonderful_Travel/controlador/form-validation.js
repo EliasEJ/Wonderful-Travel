@@ -74,6 +74,24 @@ function canviDesti(desti) {
 }
 
 function validarData() {
+  //Part 1
+  let fecha = new Date();
+  let any = fecha.getFullYear();
+  let dia = fecha.getDate();
+  let _mes = fecha.getMonth();
+  _mes = _mes + 1;
+  let mes = "";
+  if (_mes < 10)
+  {
+    mes = "0" + _mes;
+  } else {
+    mes = _mes.toString;
+  }
+
+  let data_minimo = any + '-' + mes + '-' + dia; // Nueva variable
+  document.getElementById("dataReserva").setAttribute('min', data_minimo)
+
+  //Part 2
   let dataSeleccionada = document.getElementById('data').value;
   let data = new Date(dataSeleccionada);
   let diaSetmana = data.getDay();

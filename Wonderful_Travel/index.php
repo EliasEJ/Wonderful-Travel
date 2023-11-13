@@ -110,7 +110,7 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="data" class="form-label">Data</label>
-                <input type="date" class="form-control" id="data" value="" required oninput='validarData()'>
+                <input type="date" class="form-control" id="dataReserva" value="" required onchange='validarData()'>
               </div>
 
               <div class="col-md-5">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2023 a las 15:45:33
+-- Tiempo de generación: 13-11-2023 a las 16:10:57
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,12 +31,13 @@ USE `wonderful_travel`;
 --
 
 DROP TABLE IF EXISTS `dadesusuaris`;
-CREATE TABLE `dadesusuaris` (
-  `id_usuari` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dadesusuaris` (
+  `id_usuari` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(30) NOT NULL COMMENT 'Nom de l''usuari.',
   `telefon` char(9) NOT NULL COMMENT 'Telefon de l''usuari.',
   `numPersones` tinyint(4) NOT NULL COMMENT 'Número de persones que hi aniran al viatge.',
-  `descompte` tinyint(1) NOT NULL COMMENT 'L''usuari elegeix si vol descompte o no.'
+  `descompte` tinyint(1) NOT NULL COMMENT 'L''usuari elegeix si vol descompte o no.',
+  PRIMARY KEY (`id_usuari`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,14 +47,26 @@ CREATE TABLE `dadesusuaris` (
 --
 
 DROP TABLE IF EXISTS `destiviatges`;
-CREATE TABLE `destiviatges` (
-  `id_viatge` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `destiviatges` (
+  `id_viatge` int(11) NOT NULL AUTO_INCREMENT,
   `destiContinent` varchar(20) NOT NULL COMMENT 'Continent on viatjarà l''usuari.',
   `destiPais` varchar(30) NOT NULL COMMENT 'País on viatjarà l''usuari.',
   `preu` float NOT NULL COMMENT 'Preu del viatge.',
   `imatge` text NOT NULL COMMENT 'Imatge que es mostrarà quan s''elegeixi destiContinent i destiPais.',
-  `dataDisponible` date NOT NULL COMMENT 'Data que elegirà l''usuari per anar de viatge.'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`id_viatge`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `destiviatges`
+--
+
+INSERT INTO `destiviatges` (`id_viatge`, `destiContinent`, `destiPais`, `preu`, `imatge`) VALUES
+(1, 'Europa', 'Espanya', 96, 'https://www.viajejet.com/wp-content/viajes/vista-nocturna-de-la-playa-de-la-barceloneta.jpg'),
+(2, 'Europa', 'Italia', 96, 'https://www.mycoyote.es/blog/wp-content/uploads/2018/05/viajar-italia.jpg'),
+(3, 'Europa', 'França', 96, 'https://th.bing.com/th/id/R.c6719763a32b368e0914e585e34a1ec6?rik=4KNFjqvcbMn7tw&riu=http%3a%2f%2fwww.viajaratope.com%2fimages%2fDestino-Francia.jpg&ehk=SI56%2bIbl0nprYFHEybWFBlL%2f0Zzci8LTtVl0t2wDI8Q%3d&risl=&pid=ImgRaw&r=0'),
+(4, 'Europa', 'Grècia', 96, 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2016/07/isole-greche-santorini-iStock-1139370277.jpg?v=429819'),
+(5, 'Europa', 'Alemanya', 96, 'https://www.guiadealemania.com/wp-content/uploads/2009/08/Frauenkirche_y_Nuevo_Ayuntamiento.jpg'),
+(6, 'Europa', 'Portugal', 96, 'https://www.wallpics.net/wp-content/uploads/2017/12/Lisbon-5-scaled.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,10 +75,13 @@ CREATE TABLE `destiviatges` (
 --
 
 DROP TABLE IF EXISTS `reserves`;
-CREATE TABLE `reserves` (
-  `id_reserves` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reserves` (
+  `id_reserves` int(11) NOT NULL AUTO_INCREMENT,
   `dadesUsuari` int(11) NOT NULL COMMENT 'Dades de la taula dadesUsuaris.',
-  `dadesViatge` int(11) NOT NULL COMMENT 'Dades de la taula dadesViatges.'
+  `dadesViatge` int(11) NOT NULL COMMENT 'Dades de la taula dadesViatges.',
+  PRIMARY KEY (`id_reserves`),
+  KEY `fk_id_usuari_destiUsuaris` (`dadesUsuari`),
+  KEY `fk_id_viatge_destiViatges` (`dadesViatge`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -75,56 +91,11 @@ CREATE TABLE `reserves` (
 --
 
 DROP TABLE IF EXISTS `usuaris`;
-CREATE TABLE `usuaris` (
+CREATE TABLE IF NOT EXISTS `usuaris` (
   `email` varchar(50) NOT NULL COMMENT 'email para registrarse',
-  `password` varchar(20) NOT NULL COMMENT 'password encriptada'
+  `password` varchar(20) NOT NULL COMMENT 'password encriptada',
+  PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `dadesusuaris`
---
-ALTER TABLE `dadesusuaris`
-  ADD PRIMARY KEY (`id_usuari`);
-
---
--- Indices de la tabla `destiviatges`
---
-ALTER TABLE `destiviatges`
-  ADD PRIMARY KEY (`id_viatge`);
-
---
--- Indices de la tabla `reserves`
---
-ALTER TABLE `reserves`
-  ADD PRIMARY KEY (`id_reserves`),
-  ADD KEY `fk_id_usuari_destiUsuaris` (`dadesUsuari`),
-  ADD KEY `fk_id_viatge_destiViatges` (`dadesViatge`);
-
---
--- Indices de la tabla `usuaris`
---
-ALTER TABLE `usuaris`
-  ADD PRIMARY KEY (`email`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `dadesusuaris`
---
-ALTER TABLE `dadesusuaris`
-  MODIFY `id_usuari` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `reserves`
---
-ALTER TABLE `reserves`
-  MODIFY `id_reserves` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
