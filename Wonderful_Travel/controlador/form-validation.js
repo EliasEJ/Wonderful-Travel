@@ -88,9 +88,9 @@ function validarData() {
     mes = _mes.toString;
   }
 
-  let data_minimo = any + '-' + mes + '-' + dia; // Nueva variable
+  let data_minimo = any + '-' + mes + '-' + dia;
   document.getElementById("dataReserva").setAttribute('min', data_minimo)
-
+/*
   //Part 2
   let dataSeleccionada = document.getElementById('data').value;
   let data = new Date(dataSeleccionada);
@@ -105,6 +105,7 @@ function validarData() {
     document.getElementById('data').value = '';
     alert('Selecciona una data vàlida. Els dies dilluns, dimecres i divendres no hi ha vols disponibles.');
   }
+*/
 }
 
 
