@@ -133,7 +133,7 @@
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                
+                  <img id="imgDesti" src="<?php imatgePais(); ?>" alt="" width="100%">
               </div>
             </div>
 
