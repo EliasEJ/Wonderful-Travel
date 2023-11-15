@@ -150,11 +150,11 @@ const switchTheme = (evt) => {
 	const switchBtn = evt.target;
 	if (switchBtn.textContent.toLowerCase() === "light") {
 		switchBtn.textContent = "dark";
-		// localStorage.setItem("theme", "dark");
+		localStorage.setItem("theme", "dark");
 		document.documentElement.setAttribute("data-theme", "dark");
 	} else {
 		switchBtn.textContent = "light";
-		// localStorage.setItem("theme", "light"); //add this
+		localStorage.setItem("theme", "light"); //add this
 		document.documentElement.setAttribute("data-theme", "light");
 	}
 };
@@ -163,36 +163,48 @@ const switchModeBtn = document.querySelector(".switch-btn");
 switchModeBtn.addEventListener("click", switchTheme, false);
 
 let currentTheme = "dark";
-// currentTheme = localStorage.getItem("theme")
-// 	? localStorage.getItem("theme")
-// 	: null;
+ currentTheme = localStorage.getItem("theme")
+ 	? localStorage.getItem("theme")
+: null;
 
 if (currentTheme) {
 	document.documentElement.setAttribute("data-theme", currentTheme);
 	switchModeBtn.textContent = currentTheme;
 }
 
+
+// Theme switcher
 document.getElementById('themeButton').addEventListener('click', function() {
   var body = document.body;
   var titles = document.getElementsByClassName('theme-title');
   var labels = document.getElementsByClassName('theme-label');
   if (body.classList.contains('bg-dark')) {
-      body.classList.remove('bg-dark');
-      body.classList.add('bg-light');
-      for (var i = 0; i < titles.length; i++) {
-          titles[i].style.color = 'black';
-      }
-      for (var i = 0; i < labels.length; i++) {
-          labels[i].style.color = 'black';
-      }
+    body.classList.remove('bg-dark');
+    body.classList.add('bg-light');
+    localStorage.setItem('theme', 'light'); // Guarda el tema en localStorage
+    for (var i = 0; i < titles.length; i++) {
+      titles[i].style.color = 'black';
+    }
+    for (var i = 0; i < labels.length; i++) {
+      labels[i].style.color = 'black';
+    }
   } else {
-      body.classList.remove('bg-light');
-      body.classList.add('bg-dark');
-      for (var i = 0; i < titles.length; i++) {
-          titles[i].style.color = 'white';
-      }
-      for (var i = 0; i < labels.length; i++) {
-          labels[i].style.color = 'white';
-      }
+    body.classList.remove('bg-light');
+    body.classList.add('bg-dark');
+    localStorage.setItem('theme', 'dark'); // Guarda el tema en localStorage
+    for (var i = 0; i < titles.length; i++) {
+      titles[i].style.color = 'white';
+    }
+    for (var i = 0; i < labels.length; i++) {
+      labels[i].style.color = 'white';
+    }
   }
 });
+
+window.onload = function() {
+  var theme = localStorage.getItem('theme');
+  if (theme) {
+    var body = document.body;
+    body.classList.add('bg-' + theme);
+  }
+};

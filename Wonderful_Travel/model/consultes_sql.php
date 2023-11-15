@@ -30,7 +30,7 @@ function preuDesti(){
     }
 
     try{
-        $stmt = $con->prepare("SELECT `preu` FROM `destiviatges` WHERE destiPais = :destiPais;");
+        $stmt = $con->prepare("SELECT preu FROM destiviatges WHERE destiPais = :destiPais");
         $stmt->bindParam(':destiPais', $destiPais);
 
         $stmt->execute();
