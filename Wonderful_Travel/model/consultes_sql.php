@@ -2,43 +2,27 @@
 require_once("conn.php");
 $con = con();
 
-function imatgePais(){
-    global $con;
-    $destiPais = $_GET['destiPais'] ?? null; 
-    if ($destiPais === null) {
-        return null;
-    }
+session_start();
 
-    try{
-        $stmt = $con->prepare("SELECT imatge FROM destiviatges WHERE destiPais = :destiPais");
-        $stmt->bindParam(':destiPais', $destiPais);
+function obtenirDades() {
+    global $con;
+
+    try {
+        $stmt = $con->prepare("SELECT destiPais, imatge, preu FROM destiviatges");
         $stmt->execute();
-        $result = $stmt->fetch();
-        echo $result['imatge'];
-    
-    }catch(PDOException $e){
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $_SESSION['destiData'] = [];
+        foreach ($result as $row) {
+            $_SESSION['destiData'][$row['destiPais']] = [
+                'imatge' => $row['imatge'],
+                'preu' => $row['preu']
+            ];
+        }
+    } catch(PDOException $e) {
         die("Error: ".$e->getMessage());
     }
 }
 
-
-function preuDesti(){
-    global $con;
-    $destiPais = $_GET['destiPais'] ?? null; 
-    if ($destiPais === null) {
-        return null;
-    }
-
-    try{
-        $stmt = $con->prepare("SELECT preu FROM destiviatges WHERE destiPais = :destiPais");
-        $stmt->bindParam(':destiPais', $destiPais);
-
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo $row['preu'] . " €";
-
-    }catch(PDOException $e){
-        die("Error: ".$e->getMessage());
-    }
-}
+obtenirDades();
 ?>

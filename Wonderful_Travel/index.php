@@ -12,7 +12,10 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
 
-
+  <script>
+    var destiData = <?php echo json_encode($_SESSION['destiData']); ?>;
+    console.log(destiData);
+  </script>
 
   <!-- Bootstrap core CSS -->
   <link href="estils/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +54,7 @@
       </div>
       <div class="switch-cont">
         <button class="switch-btn">Light</button>
-      <button id="themeButton" class="switch-btn">Tema pàgina</button>
+        <button id="themeButton" class="switch-btn">Tema pàgina</button>
 
       </div>
       <div class="row g-5">
@@ -103,7 +106,7 @@
           </form>
         </div>
         <div class="col-md-7 col-lg-8">
-          <h4 class="mb-3">Dades del viatge</h4>
+          <h4 class="mb-3 theme-label">Dades del viatge</h4>
 
           <!-- Formulari principal dades viatge. -->
           <form class="needs-validation" novalidate>
@@ -111,7 +114,8 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="data" class="form-label theme-label">Data</label>
-                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'></div>
+                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
+              </div>
 
               <div class="col-md-5">
                 <label for="destiLabel" class="form-label theme-label">Desti</label>
@@ -127,26 +131,27 @@
 
               <div class="col-md-5">
                 <label for="destiPaisLabel" class="form-label"><br></label>
-                <select class="form-select" id="destiPais" required onchange="fetchImage()">
+                <select class="form-select" id="destiPais" required onchange="imatgePais(); preuDesti();">
                 </select>
               </div>
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                  <img id="imgDesti" src="<?php imatgePais(); ?>" alt="" width="100%">
+                <img id="imgDesti" src="" alt="" width="100%">
               </div>
             </div>
 
             <div class="col-sm-6">
               <label for="preu" class="form-label theme-label">Preu</label>
-              <input type="text" class="form-control" id="preu" placeholder="" value='<?php preuDesti()?>' disabled>
+              <input type="text" class="form-control" id="preu" placeholder="" disabled>
             </div>
 
             <br>
 
             <div class="col-sm-6">
               <label for="nom" class="form-label theme-label">Nom</label>
-              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="1"></div>
+              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="1">
+            </div>
 
             <br>
 
@@ -183,4 +188,5 @@
 
   <script src="controlador/form-validation.js"></script>
 </body>
+
 </html>

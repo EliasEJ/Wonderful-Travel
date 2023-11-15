@@ -9120,3 +9120,8 @@ body {
 	cursor: pointer;
 	transition: all ease 0.3s;
 }
+
+img{
+    border-radius: 2%;
+    width: 75%;
+}

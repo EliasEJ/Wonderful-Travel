@@ -21,20 +21,20 @@
 
 function myOnLoad() {
   canviDesti();
- }
+}
 
- let desti;
+let desti;
 
 function canviDesti(desti) {
   desti = document.getElementById("desti").value;
   let destiPais = document.getElementById("destiPais");
-  let arrayEuropa = ['Selecciona un pais','Espanya', 'Italia', 'França','Alemanya','Grècia','Portugal']
-  let arrayAmerica = ['Selecciona un pais','Estats Units', 'Canadà', 'Mèxic','Brasil','Argentina','Perú']
-  let arrayAsia = ['Selecciona un pais','Japó', 'Xina', 'Corea del Sud','Vietnam','Filipines','Tailàndia']
-  let arrayAfrica = ['Selecciona un pais','Marroc', 'Egipte', 'Tunísia','Senegal','Mali','Etiòpia']
-  let arrayOceania = ['Selecciona un pais','Austràlia', 'Nova Zelanda', 'Fiji','Samoa','Tonga','Micronèsia']
+  let arrayEuropa = ['Selecciona un pais', 'Espanya', 'Italia', 'França', 'Alemanya', 'Grècia', 'Portugal']
+  let arrayAmerica = ['Selecciona un pais', 'Estats Units', 'Canadà', 'Mèxic', 'Brasil', 'Argentina', 'Perú']
+  let arrayAsia = ['Selecciona un pais', 'Japó', 'Xina', 'Corea del Sud', 'Vietnam', 'Filipines', 'Tailàndia']
+  let arrayAfrica = ['Selecciona un pais', 'Marroc', 'Egipte', 'Tunísia', 'Senegal', 'Mali', 'Etiòpia']
+  let arrayOceania = ['Selecciona un pais', 'Austràlia', 'Nova Zelanda', 'Fiji', 'Samoa', 'Tonga', 'Micronèsia']
 
-  switch(desti) {
+  switch (desti) {
     case 'nada':
       destiPais.innerHTML = '';
       break;
@@ -81,8 +81,7 @@ function validarData() {
   let _mes = fecha.getMonth();
   _mes = _mes + 1;
   let mes = "";
-  if (_mes < 10)
-  {
+  if (_mes < 10) {
     mes = "0" + _mes;
   } else {
     mes = _mes.toString;
@@ -90,40 +89,23 @@ function validarData() {
 
   let data_minimo = any + '-' + mes + '-' + dia;
   document.getElementById("dataReserva").setAttribute('min', data_minimo)
-/*
-  //Part 2
-  let dataSeleccionada = document.getElementById('data').value;
-  let data = new Date(dataSeleccionada);
-  let diaSetmana = data.getDay();
+  /*
+    //Part 2
+    let dataSeleccionada = document.getElementById('data').value;
+    let data = new Date(dataSeleccionada);
+    let diaSetmana = data.getDay();
+    
+    if(fecha < Date.now()) {
+      document.getElementById('data').value = '';
+      alert('Selecciona una data vàlida. No es pot seleccionar una data anterior a la data actual.');
+    }
   
-  if(fecha < Date.now()) {
-    document.getElementById('data').value = '';
-    alert('Selecciona una data vàlida. No es pot seleccionar una data anterior a la data actual.');
-  }
-
-  if (diaSetmana === 1 || diaSetmana === 3 || diaSetmana === 5) {
-    document.getElementById('data').value = '';
-    alert('Selecciona una data vàlida. Els dies dilluns, dimecres i divendres no hi ha vols disponibles.');
-  }
-*/
+    if (diaSetmana === 1 || diaSetmana === 3 || diaSetmana === 5) {
+      document.getElementById('data').value = '';
+      alert('Selecciona una data vàlida. Els dies dilluns, dimecres i divendres no hi ha vols disponibles.');
+    }
+  */
 }
-
-function fetchImage() {
-  var destiPais = document.getElementById('destiPais').value;
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'fetch_image.php?destiPais=' + encodeURIComponent(destiPais), true);
-  xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200)
-          document.getElementById('imageContainer').innerHTML = xhr.responseText;
-  }
-  xhr.send();
-
-  // Actualiza la URL
-  var url = new URL(window.location.href);
-  url.searchParams.set('destiPais', destiPais);
-  window.history.replaceState({}, '', url);
-}
-
 
 const deg = 6;
 const hour = document.querySelector(".hour");
@@ -131,14 +113,14 @@ const min = document.querySelector(".min");
 const sec = document.querySelector(".sec");
 
 const setClock = () => {
-	let day = new Date();
-	let hh = day.getHours() * 30;
-	let mm = day.getMinutes() * deg;
-	let ss = day.getSeconds() * deg;
+  let day = new Date();
+  let hh = day.getHours() * 30;
+  let mm = day.getMinutes() * deg;
+  let ss = day.getSeconds() * deg;
 
-	hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-	min.style.transform = `rotateZ(${mm}deg)`;
-	sec.style.transform = `rotateZ(${ss}deg)`;
+  hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+  min.style.transform = `rotateZ(${mm}deg)`;
+  sec.style.transform = `rotateZ(${ss}deg)`;
 };
 
 // first time
@@ -147,34 +129,34 @@ setClock();
 setInterval(setClock, 1000);
 
 const switchTheme = (evt) => {
-	const switchBtn = evt.target;
-	if (switchBtn.textContent.toLowerCase() === "light") {
-		switchBtn.textContent = "dark";
-		localStorage.setItem("theme", "dark");
-		document.documentElement.setAttribute("data-theme", "dark");
-	} else {
-		switchBtn.textContent = "light";
-		localStorage.setItem("theme", "light"); //add this
-		document.documentElement.setAttribute("data-theme", "light");
-	}
+  const switchBtn = evt.target;
+  if (switchBtn.textContent.toLowerCase() === "light") {
+    switchBtn.textContent = "dark";
+    localStorage.setItem("theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    switchBtn.textContent = "light";
+    localStorage.setItem("theme", "light"); //add this
+    document.documentElement.setAttribute("data-theme", "light");
+  }
 };
 
 const switchModeBtn = document.querySelector(".switch-btn");
 switchModeBtn.addEventListener("click", switchTheme, false);
 
 let currentTheme = "dark";
- currentTheme = localStorage.getItem("theme")
- 	? localStorage.getItem("theme")
-: null;
+currentTheme = localStorage.getItem("theme")
+  ? localStorage.getItem("theme")
+  : null;
 
 if (currentTheme) {
-	document.documentElement.setAttribute("data-theme", currentTheme);
-	switchModeBtn.textContent = currentTheme;
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  switchModeBtn.textContent = currentTheme;
 }
 
 
 // Theme switcher
-document.getElementById('themeButton').addEventListener('click', function() {
+document.getElementById('themeButton').addEventListener('click', function () {
   var body = document.body;
   var titles = document.getElementsByClassName('theme-title');
   var labels = document.getElementsByClassName('theme-label');
@@ -201,10 +183,28 @@ document.getElementById('themeButton').addEventListener('click', function() {
   }
 });
 
-window.onload = function() {
+window.onload = function () {
   var theme = localStorage.getItem('theme');
   if (theme) {
     var body = document.body;
     body.classList.add('bg-' + theme);
   }
 };
+
+function imatgePais(){
+  let destiPais = document.getElementById("destiPais").value;
+  let img = document.getElementById("imgDesti");
+
+  if (destiData[destiPais]) {
+    img.src = destiData[destiPais].imatge;
+  }
+}
+
+function preuDesti(){
+  let destiPais = document.getElementById("destiPais").value;
+  let preu = document.getElementById("preu");
+
+  if (destiData[destiPais]) {
+    preu.value = destiData[destiPais].preu + ' €';
+  }
+}
