@@ -28,11 +28,11 @@ function myOnLoad() {
 function canviDesti(desti) {
   desti = document.getElementById("desti").value;
   let destiPais = document.getElementById("destiPais");
-  let arrayEuropa = ['Espanya', 'Italia', 'França','Alemanya','Grècia','Portugal']
-  let arrayAmerica = ['Estats Units', 'Canadà', 'Mèxic','Brasil','Argentina','Perú']
-  let arrayAsia = ['Japó', 'Xina', 'Corea del Sud','Vietnam','Filipines','Tailàndia']
-  let arrayAfrica = ['Marroc', 'Egipte', 'Tunísia','Senegal','Mali','Etiòpia']
-  let arrayOceania = ['Austràlia', 'Nova Zelanda', 'Fiji','Samoa','Tonga','Micronèsia']
+  let arrayEuropa = ['Selecciona un pais','Espanya', 'Italia', 'França','Alemanya','Grècia','Portugal']
+  let arrayAmerica = ['Selecciona un pais','Estats Units', 'Canadà', 'Mèxic','Brasil','Argentina','Perú']
+  let arrayAsia = ['Selecciona un pais','Japó', 'Xina', 'Corea del Sud','Vietnam','Filipines','Tailàndia']
+  let arrayAfrica = ['Selecciona un pais','Marroc', 'Egipte', 'Tunísia','Senegal','Mali','Etiòpia']
+  let arrayOceania = ['Selecciona un pais','Austràlia', 'Nova Zelanda', 'Fiji','Samoa','Tonga','Micronèsia']
 
   switch(desti) {
     case 'nada':
@@ -170,3 +170,28 @@ if (currentTheme) {
 	document.documentElement.setAttribute("data-theme", currentTheme);
 	switchModeBtn.textContent = currentTheme;
 }
+
+document.getElementById('themeButton').addEventListener('click', function() {
+  var body = document.body;
+  var titles = document.getElementsByClassName('theme-title');
+  var labels = document.getElementsByClassName('theme-label');
+  if (body.classList.contains('bg-dark')) {
+      body.classList.remove('bg-dark');
+      body.classList.add('bg-light');
+      for (var i = 0; i < titles.length; i++) {
+          titles[i].style.color = 'black';
+      }
+      for (var i = 0; i < labels.length; i++) {
+          labels[i].style.color = 'black';
+      }
+  } else {
+      body.classList.remove('bg-light');
+      body.classList.add('bg-dark');
+      for (var i = 0; i < titles.length; i++) {
+          titles[i].style.color = 'white';
+      }
+      for (var i = 0; i < labels.length; i++) {
+          labels[i].style.color = 'white';
+      }
+  }
+});

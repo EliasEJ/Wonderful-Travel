@@ -42,7 +42,7 @@
   <div class="container">
     <main>
       <div class="py-5 text-center">
-        <h2>Wonderful Travel</h2>
+        <h2 class="theme-title">Wonderful Travel</h2>
       </div>
       <div class="clock">
         <div class="hour"></div>
@@ -50,9 +50,10 @@
         <div class="sec"></div>
       </div>
       <div class="switch-cont">
-        <button class="switch-btn"> Light </button>
-      </div>
+        <button class="switch-btn">Light</button>
+      <button id="themeButton" class="switch-btn">Tema pàgina</button>
 
+      </div>
       <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -109,12 +110,11 @@
 
             <div class="row g-3">
               <div class="col-sm-6">
-                <label for="data" class="form-label">Data</label>
-                <input type="date" class="form-control" id="dataReserva" value="" required onchange='validarData()'>
-              </div>
+                <label for="data" class="form-label theme-label">Data</label>
+                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'></div>
 
               <div class="col-md-5">
-                <label for="destiLabel" class="form-label">Desti</label>
+                <label for="destiLabel" class="form-label theme-label">Desti</label>
                 <select class="form-select" name="desti" id="desti" required onchange="canviDesti()">
                   <option value="">Selecciona desti</option>
                   <option value="europa" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "europa") echo 'selected'; ?>>Europa</option>
@@ -138,34 +138,33 @@
             </div>
 
             <div class="col-sm-6">
-              <label for="preu" class="form-label">Preu</label>
-              <input type="text" class="form-control" id="preu" placeholder="" value="" disabled>
+              <label for="preu" class="form-label theme-label">Preu</label>
+              <input type="text" class="form-control" id="preu" placeholder="" value='<?php preuDesti()?>' disabled>
             </div>
 
             <br>
 
             <div class="col-sm-6">
-              <label for="nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="nom" placeholder="" value="" required>
+              <label for="nom" class="form-label theme-label">Nom</label>
+              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="1"></div>
+
+            <br>
+
+            <div class="col-12">
+              <label for="telf" class="form-label theme-label">Telèfon</label>
+              <input type="text" class="form-control" id="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
             </div>
 
             <br>
 
             <div class="col-12">
-              <label for="telf" class="form-label">Telèfon</label>
-              <input type="tel" class="form-control" id="telf" placeholder="" required>
-            </div>
-
-            <br>
-
-            <div class="col-12">
-              <label for="numPersones" class="form-label">Persones</label>
+              <label for="numPersones" class="form-label theme-label">Persones</label>
               <input type="number" class="form-control" id="numPersones" placeholder="" required>
             </div>
             <br>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="descompte">
-              <label class="form-check-label" for="descompte">Descompte 20%</label>
+              <label class="form-check-label theme-label" for="descompte">Descompte 20%</label>
             </div>
             <br>
             <button class="w-100 btn btn-primary btn-lg" type="submit">Afegir</button>
@@ -184,6 +183,4 @@
 
   <script src="controlador/form-validation.js"></script>
 </body>
-
 </html>
-<?require "model/consultes_sql.php"?>
