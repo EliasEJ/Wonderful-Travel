@@ -1,4 +1,4 @@
-##Instruccions per obrir arxiu de Diagrama d'activitats
+## Instruccions per obrir arxiu de Diagrama d'activitats
 
 - Obrir arxiu
 - Mirar a la dreta fins trobar el "MODEL EXPLORER"
