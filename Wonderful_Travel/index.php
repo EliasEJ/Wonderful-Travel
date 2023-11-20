@@ -44,6 +44,10 @@
 
   <div class="container">
     <main>
+      <div class="container">
+        <button class="login-btn" onclick="">Login</button>
+        <button class="login-btn" onclick="">Registre</button>
+      </div>
       <div class="py-5 text-center">
         <h2 class="theme-title">Wonderful Travel</h2>
       </div>
