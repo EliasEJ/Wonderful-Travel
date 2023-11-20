@@ -191,7 +191,7 @@ window.onload = function () {
   }
 };
 
-function imatgePais(){
+function imatgePais() {
   let destiPais = document.getElementById("destiPais").value;
   let img = document.getElementById("imgDesti");
 
@@ -200,7 +200,7 @@ function imatgePais(){
   }
 }
 
-function preuDesti(){
+function preuDesti() {
   let destiPais = document.getElementById("destiPais").value;
   let preu = document.getElementById("preu");
 
