@@ -113,7 +113,7 @@
           <h4 class="mb-3 theme-label">Dades del viatge</h4>
 
           <!-- Formulari principal dades viatge. -->
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" method="post" novalidate >
 
             <div class="row g-3">
               <div class="col-sm-6">
