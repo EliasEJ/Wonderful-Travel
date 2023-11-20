@@ -121,11 +121,11 @@
                 <label for="destiLabel" class="form-label theme-label">Desti</label>
                 <select class="form-select" name="desti" id="desti" required onchange="canviDesti()">
                   <option value="">Selecciona desti</option>
-                  <option value="europa" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "europa") echo 'selected'; ?>>Europa</option>
-                  <option value="asia" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "asia") echo 'selected'; ?>>Asia</option>
-                  <option value="america" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "america") echo 'selected'; ?>>Amèrica</option>
-                  <option value="africa" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "africa") echo 'selected'; ?>>Àfrica</option>
-                  <option value="oceania" <?php if (isset($_GET["desti"]) && $_GET["desti"] == "oceania") echo 'selected'; ?>>Oceania</option>
+                  <option value="europa">Europa</option>
+                  <option value="asia">Asia</option>
+                  <option value="america">Amèrica</option>
+                  <option value="africa">Àfrica</option>
+                  <option value="oceania">Oceania</option>
                 </select>
               </div>
 
@@ -150,25 +150,25 @@
 
             <div class="col-sm-6">
               <label for="nom" class="form-label theme-label">Nom</label>
-              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="1">
+              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="3">
             </div>
 
             <br>
 
             <div class="col-12">
               <label for="telf" class="form-label theme-label">Telèfon</label>
-              <input type="text" class="form-control" id="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
+              <input type="text" class="form-control" id="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="9">
             </div>
 
             <br>
 
             <div class="col-12">
               <label for="numPersones" class="form-label theme-label">Persones</label>
-              <input type="number" class="form-control" id="numPersones" placeholder="" required>
+              <input type="number" class="form-control" id="numPersones" placeholder="" required onchange="canviPreu()" value="1">
             </div>
             <br>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="descompte">
+              <input type="checkbox" class="form-check-input" id="descompte" onchange="canviPreu()">
               <label class="form-check-label theme-label" for="descompte">Descompte 20%</label>
             </div>
             <br>

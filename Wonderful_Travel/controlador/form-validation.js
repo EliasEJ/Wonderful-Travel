@@ -200,11 +200,29 @@ function imatgePais() {
   }
 }
 
+let preuOriginal = null;
+
 function preuDesti() {
   let destiPais = document.getElementById("destiPais").value;
   let preu = document.getElementById("preu");
 
   if (destiData[destiPais]) {
-    preu.value = destiData[destiPais].preu + ' €';
+    preuOriginal = destiData[destiPais].preu;
+    preu.value = preuOriginal + ' €';
   }
+}
+
+function canviPreu() {
+  let numPersones = document.getElementById("numPersones").value;
+  let descompte = document.getElementById("descompte").checked;
+
+  numPersones = parseInt(numPersones);
+  let preuFinal = preuOriginal;
+
+  if (descompte == true) {
+    preuFinal = preuFinal - (preuFinal * 0.2);
+  }
+  
+  preuFinal = preuFinal * numPersones;
+  document.getElementById("preu").value = preuFinal + ' €';
 }
