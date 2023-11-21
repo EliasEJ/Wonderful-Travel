@@ -1,3 +1,11 @@
+<?php
+require_once '../controlador/controlador.login.php';
+
+if(isset($_SESSION['email'])){
+    header('Location: ../index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
-  <title>Login | Register</title>
+  <title>Login</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
 
@@ -43,30 +51,36 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;">
+          <form method="post" style="width: 23rem;">
 
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login</h3>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="emailL">Correu electrònic</label>
-              <input type="email" id="emailL" class="form-control form-control-lg" />
+              <input type="email" name="emailL" class="form-control form-control-lg" value="<?php echo saveEmailL();?>"/>
             </div>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="passwordL">Contrasenya</label>
-              <input type="password" id="passwordL" class="form-control form-control-lg" />
+              <input type="password" name="passwordL" class="form-control form-control-lg" />
             </div>
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-block" type="button" id="login">Login</button>
-              <button class="btn btn-info btn-block" type="button" id="tornar" onclick="window.location.href='../'">Tornar</button>
+              <button class="btn btn-info btn-block" type="submit" name="login">Login</button>
+              <button class="btn btn-info btn-block" type="button" name="tornar" onclick="window.location.href='../'">Tornar</button>
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">T'has oblidat de la contrasenya?</a></p>
             <p>No tens compte? <a href="./registre.vista.php" class="link-info">Registrat aquí</a></p>
 
+            <div class="pt-1 mb-4">
+              <?php
+              if(isset($_POST['login'])){
+                  comprovacionsL();
+              }
+              ?>
+            </div>
           </form>
-
         </div>
 
       </div>

@@ -1,4 +1,6 @@
-<?php require_once 'model/consultes_sql.php' ?>
+<?php
+require_once 'model/consultes_sql.php';
+?>
 <!doctype html>
 <html lang="en">
 
@@ -45,8 +47,8 @@
   <div class="container">
     <main>
       <div class="container">
-        <button class="login-btn" onclick="">Login</button>
-        <button class="login-btn" onclick="">Registre</button>
+        <button class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
+        <button class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button>
       </div>
       <div class="py-5 text-center">
         <h2 class="theme-title">Wonderful Travel</h2>

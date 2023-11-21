@@ -1,5 +1,5 @@
 <?php
-require_once 'model/conn.php';
+require_once '../model/conn.php';
 
 function existeixUsuari($username){
     try{
@@ -10,9 +10,9 @@ function existeixUsuari($username){
         ));
         $resultat = $sql->fetch();
         if(empty($resultat)){
-            return false;
-        }else{
             return true;
+        }else{
+            return false;
         }
     }catch(PDOException $e){
         echo "Error: " . $e->getMessage();
@@ -28,9 +28,9 @@ function existeixEmail($email){
         ));
         $resultat = $sql->fetch();
         if(empty($resultat)){
-            return false;
-        }else{
             return true;
+        }else{
+            return false;
         }
     }catch(PDOException $e){
         echo "Error: " . $e->getMessage();
