@@ -131,7 +131,7 @@ echo $_SESSION['email'];
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="data" class="form-label theme-label">Data</label>
-                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
+                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
               </div>
 
               <div class="col-md-5">
@@ -154,7 +154,7 @@ echo $_SESSION['email'];
 
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
-                <img id="imgDesti" src="" alt="" width="100%">
+                <img id="imgDesti" width="100%">
               </div>
             </div>
 
@@ -196,7 +196,7 @@ echo $_SESSION['email'];
                 echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].removeAttribute("disabled");</script>';
               }else {
                 echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].setAttribute("disabled", "true");</script>';
-                ?> <p class="center"><i><u>Per poder afegir el vol, has d'iniciar sessió</u></i></p> <?php
+                ?> <p class="center"><i><u>Inicia sessió per poder afegir el teu vol !</u></i></p> <?php
               }
             ?>
             <hr class="my-4">
