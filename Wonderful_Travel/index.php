@@ -137,7 +137,7 @@ require_once 'controlador/controlador.tancarSessio.php';
               <div class="col-md-5">
                 <label for="destiLabel" class="form-label theme-label">Desti</label>
                 <select class="form-select" name="desti" id="desti" required onchange="canviDesti()">
-                  <option value="">Selecciona desti</option>
+                  <option value="Selecciona desti">Selecciona desti</option>
                   <option value="europa">Europa</option>
                   <option value="asia">Asia</option>
                   <option value="america">Amèrica</option>

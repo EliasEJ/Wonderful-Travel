@@ -69,43 +69,22 @@ function canviDesti(desti) {
         destiPais.innerHTML += '<option value="' + arrayOceania[i] + '" id="pais">' + arrayOceania[i] + '</option>';
       }
       break;
-  }
-
+  } 
 }
 
-function validarData() {
-  //Part 1
-  let fecha = new Date();
-  let any = fecha.getFullYear();
-  let dia = fecha.getDate();
-  let _mes = fecha.getMonth();
-  _mes = _mes + 1;
-  let mes = "";
-  if (_mes < 10) {
-    mes = "0" + _mes;
-  } else {
-    mes = _mes.toString;
+document.getElementById('desti').addEventListener('change', function() {
+  if (this.value !== 'Selecciona desti') {
+    let option = this.querySelector('option[value="Selecciona desti"]');
+    if (option) option.disabled = true;
   }
+});
 
-  let data_minimo = any + '-' + mes + '-' + dia;
-  document.getElementById("dataReserva").setAttribute('min', data_minimo)
-  /*
-    //Part 2
-    let dataSeleccionada = document.getElementById('data').value;
-    let data = new Date(dataSeleccionada);
-    let diaSetmana = data.getDay();
-    
-    if(fecha < Date.now()) {
-      document.getElementById('data').value = '';
-      alert('Selecciona una data vàlida. No es pot seleccionar una data anterior a la data actual.');
-    }
-  
-    if (diaSetmana === 1 || diaSetmana === 3 || diaSetmana === 5) {
-      document.getElementById('data').value = '';
-      alert('Selecciona una data vàlida. Els dies dilluns, dimecres i divendres no hi ha vols disponibles.');
-    }
-  */
-}
+document.getElementById('destiPais').addEventListener('change', function() {
+  if (this.value !== 'Selecciona un pais') {
+    let option = this.querySelector('option[value="Selecciona un pais"]');
+    if (option) option.disabled = true;
+  }
+});
 
 const deg = 6;
 const hour = document.querySelector(".hour");
