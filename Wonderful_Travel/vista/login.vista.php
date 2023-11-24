@@ -70,14 +70,14 @@ if(isset($_SESSION['email'])){
               <button class="btn btn-info btn-block" type="button" name="tornar" onclick="window.location.href='../'">Tornar</button>
             </div>
 
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">T'has oblidat de la contrasenya?</a></p>
+            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="./recuperarContrasenya.vista.php">T'has oblidat de la contrasenya?</a></p>
             <p>No tens compte? <a href="./registre.vista.php" class="link-info">Registrat aquí</a></p>
 
             <div class="pt-1 mb-4">
               <?php
-              if(isset($_POST['login'])){
-                  comprovacionsL();
-              }
+                if(isset($_POST['login'])){
+                    comprovacionsL();
+                }
               ?>
             </div>
           </form>

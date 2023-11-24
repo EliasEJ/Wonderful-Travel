@@ -1,5 +1,8 @@
 <?php
 require_once 'model/consultes_sql.php';
+require_once 'controlador/controlador.tancarSessio.php';
+
+echo $_SESSION['email'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,8 +50,16 @@ require_once 'model/consultes_sql.php';
   <div class="container">
     <main>
       <div class="container">
-        <button class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
-        <button class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button>
+        <button type="button" class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
+        <button type="button" class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button><br><br>
+        <button type="submit" class="tancarS-btn" onclick="<?php //tancarSessio();?>" id="closeSession">Tancar sessió</button>
+        <?php
+          if(isset($_SESSION['email'])){
+            echo '<script language="javascript">document.getElementsByClassName("tancarS-btn")[0].removeAttribute("hidden");</script>';
+          }else{
+            echo '<script language="javascript">document.getElementsByClassName("tancarS-btn")[0].setAttribute("hidden", "true");</script>';
+          }
+        ?>
       </div>
       <div class="py-5 text-center">
         <h2 class="theme-title">Wonderful Travel</h2>
@@ -179,6 +190,15 @@ require_once 'model/consultes_sql.php';
             </div>
             <br>
             <button class="w-100 btn btn-primary btn-lg" type="submit">Afegir</button>
+            <?php
+              //Si l'usuari ha iniciat sessió, es desbloqueja el botó d'afegir
+              if(isset($_SESSION['email'])){
+                echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].removeAttribute("disabled");</script>';
+              }else {
+                echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].setAttribute("disabled", "true");</script>';
+                ?> <p class="center"><i><u>Per poder afegir el vol, has d'iniciar sessió</u></i></p> <?php
+              }
+            ?>
             <hr class="my-4">
           </form>
 

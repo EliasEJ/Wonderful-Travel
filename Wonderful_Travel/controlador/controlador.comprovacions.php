@@ -38,4 +38,28 @@ function comprovarPassword($password){
         }
     }
 }
+
+function comrpovarPassL($password){
+    if(empty($password)){
+        echo "<br>La contrasenya no pot estar buida";
+    }else{
+        if(strlen($password) < 4 || strlen($password) > 15){
+            echo "<br>Contrasenya incorrecta";
+        }else{
+            if(!preg_match('`[a-z]`',$password)){
+                echo "<br>Contrasenya incorrecta";
+            }else{
+                if(!preg_match('`[A-Z]`',$password)){
+                    echo "<br>Contrasenya incorrecta";
+                }else{
+                    if(!preg_match('`[0-9]`',$password)){
+                        echo "<br>Contrasenya incorrecta";
+                    }else{
+                        return $password;
+                    }
+                }
+            }
+        }
+    }
+}
 ?>
