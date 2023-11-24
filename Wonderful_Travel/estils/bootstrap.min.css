@@ -11996,3 +11996,11 @@ img {
     cursor: pointer;
     float: right;
 }
+
+img {
+    transition: transform 0.6s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}

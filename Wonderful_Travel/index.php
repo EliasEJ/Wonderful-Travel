@@ -2,7 +2,7 @@
 require_once 'model/consultes_sql.php';
 require_once 'controlador/controlador.tancarSessio.php';
 
-echo $_SESSION['email'];
+// echo $_SESSION['email'];
 ?>
 <!doctype html>
 <html lang="en">
