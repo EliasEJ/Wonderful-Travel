@@ -1,7 +1,11 @@
 <?php
+session_start();
 require_once 'model/consultes_sql.php';
-require_once 'controlador/controlador.tancarSessio.php';
 
+
+if (isset($_SESSION['email'])) {
+  $email = $_SESSION['email'];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,18 +53,12 @@ require_once 'controlador/controlador.tancarSessio.php';
   <div class="container">
     <main>
       <div class="container">
-        <?php if(!isset($_SESSION['email'])): ?>
+        <?php if (!isset($_SESSION['email'])) : ?>
           <button type="button" class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
           <button type="button" class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button><br><br>
+        <?php else : ?>
+          <button type="button" class="tancarS-btn" onclick="window.location.href='controlador/controlador.tancarSessio.php'" id="closeSession">Tancar sessió</button>
         <?php endif; ?>
-        <button type="button" class="tancarS-btn" onclick="window.location.href='controlador/controlador.tancarSessio.php'" id="closeSession">Tancar sessió</button>
-        <?php
-          if(isset($_SESSION['email'])){
-            echo '<script language="javascript">document.getElementsByClassName("tancarS-btn")[0].removeAttribute("hidden");</script>';
-          }else{
-            echo '<script language="javascript">document.getElementsByClassName("tancarS-btn")[0].setAttribute("hidden", "true");</script>';
-          }
-        ?>
       </div>
       <div class="py-5 text-center">
         <h2 class="theme-title">Wonderful Travel</h2>
@@ -127,12 +125,12 @@ require_once 'controlador/controlador.tancarSessio.php';
           <h4 class="mb-3 theme-label">Dades del viatge</h4>
 
           <!-- Formulari principal dades viatge. -->
-          <form class="needs-validation" method="post" novalidate >
+          <form class="needs-validation" method="post" novalidate>
 
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="data" class="form-label theme-label">Data</label>
-                <input type="date" class="form-control" id="dataReserva" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
+                <input type="date" class="form-control" id="dataReserva" name="dataReserva" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
               </div>
 
               <div class="col-md-5">
@@ -149,7 +147,7 @@ require_once 'controlador/controlador.tancarSessio.php';
 
               <div class="col-md-5">
                 <label for="destiPaisLabel" class="form-label"><br></label>
-                <select class="form-select" id="destiPais" required onchange="imatgePais(); preuDesti();">
+                <select class="form-select" id="destiPais" name="destiPais" required onchange="imatgePais(); preuDesti();">
                 </select>
               </div>
 
@@ -161,28 +159,28 @@ require_once 'controlador/controlador.tancarSessio.php';
 
             <div class="col-sm-6">
               <label for="preu" class="form-label theme-label">Preu</label>
-              <input type="text" class="form-control" id="preu" placeholder="" disabled>
+              <input type="text" class="form-control" id="preu" name="preu" placeholder="" disabled>
             </div>
 
             <br>
 
             <div class="col-sm-6">
               <label for="nom" class="form-label theme-label">Nom</label>
-              <input type="text" class="form-control" id="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="3">
+              <input type="text" class="form-control" id="nom" name="nom" placeholder="" value="" required onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" min="3">
             </div>
 
             <br>
 
             <div class="col-12">
               <label for="telf" class="form-label theme-label">Telèfon</label>
-              <input type="text" class="form-control" id="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="9">
+              <input type="text" class="form-control" id="telf" name="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="9">
             </div>
 
             <br>
 
             <div class="col-12">
               <label for="numPersones" class="form-label theme-label">Persones</label>
-              <input type="number" class="form-control" id="numPersones" placeholder="" required onchange="canviPreu()" value="1">
+              <input type="number" class="form-control" id="numPersones" name="numPersones" placeholder="" required onchange="canviPreu()" value="1">
             </div>
             <br>
             <div class="form-check">
@@ -190,16 +188,18 @@ require_once 'controlador/controlador.tancarSessio.php';
               <label class="form-check-label theme-label" for="descompte">Descompte 20%</label>
             </div>
             <br>
-            <button class="w-100 btn btn-primary btn-lg" type="submit">Afegir</button>
+            <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit">Afegir</button>
+
+
             <?php
-              //Si l'usuari ha iniciat sessió, es desbloqueja el botó d'afegir
-              if(isset($_SESSION['email'])){
-                echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].removeAttribute("disabled");</script>';
-              }else {
-                echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].setAttribute("disabled", "true");</script>';
-                ?> <p class="center"><i><u>Inicia sessió per poder afegir el teu vol !</u></i></p> <?php
-              }
-            ?>
+            //Si l'usuari ha iniciat sessió, es desbloqueja el botó d'afegir
+            if (isset($_SESSION['email'])) {
+              echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].removeAttribute("disabled");</script>';
+            } else {
+              echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].setAttribute("disabled", "true");</script>';
+            ?> <p class="center"><i><u>Inicia sessió per poder afegir el teu vol !</u></i></p> <?php
+                                                                                                  }
+                                                                                                    ?>
             <hr class="my-4">
           </form>
 
