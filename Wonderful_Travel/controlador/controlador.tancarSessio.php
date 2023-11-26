@@ -1,10 +1,7 @@
 <?php
-function tancarSessio(){
-    if(isset($_POST['closeSession'])){
-        session_start();
-        session_destroy();
-        header('Location: ../index.php');
-        exit();
-    }
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
+session_destroy();
+
 ?>

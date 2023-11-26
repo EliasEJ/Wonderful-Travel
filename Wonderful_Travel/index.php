@@ -2,7 +2,6 @@
 require_once 'model/consultes_sql.php';
 require_once 'controlador/controlador.tancarSessio.php';
 
-// echo $_SESSION['email'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -50,9 +49,11 @@ require_once 'controlador/controlador.tancarSessio.php';
   <div class="container">
     <main>
       <div class="container">
-        <button type="button" class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
-        <button type="button" class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button><br><br>
-        <button type="submit" class="tancarS-btn" onclick="<?php //tancarSessio();?>" id="closeSession">Tancar sessió</button>
+        <?php if(!isset($_SESSION['email'])): ?>
+          <button type="button" class="login-btn" onclick="window.location.href='./vista/registre.vista.php'">Registre</button>
+          <button type="button" class="login-btn" onclick="window.location.href='./vista/login.vista.php'">Login</button><br><br>
+        <?php endif; ?>
+        <button type="button" class="tancarS-btn" onclick="window.location.href='controlador/controlador.tancarSessio.php'" id="closeSession">Tancar sessió</button>
         <?php
           if(isset($_SESSION['email'])){
             echo '<script language="javascript">document.getElementsByClassName("tancarS-btn")[0].removeAttribute("hidden");</script>';

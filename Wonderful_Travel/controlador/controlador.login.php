@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../model/model.login.php';
 require_once 'controlador.comprovacions.php';
 

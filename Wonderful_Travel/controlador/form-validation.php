@@ -5,13 +5,14 @@ $con = con();
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if(isset($_POST['submit'])){
     $data = $_POST['dataReserva'];
     $desti = $_POST['destiPais'];
     $preu = $_POST['preu'];
     $nom = $_POST['nom'];
     $telf = $_POST['telf'];
     $numPersones = $_POST['numPersones'];
+    echo $nom;
 
     afegir($data, $desti, $preu, $nom, $telf, $numPersones);
 }
