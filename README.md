@@ -91,7 +91,8 @@ Per a la creació de les interfícies hem utilitzat el framework Bootstrap. A co
 
 La següent imatge mostra la vista de la pàgina web per a un usuari anònim:
 
-![Vista Anònim](/Diagrames/vista_anonim.jpg)
+![Vista Anònim](/Wonderful_Travel/img/readme/sinLogin.png)
+![Vista Anònim](/Wonderful_Travel/img/readme/sinLogin2.png)
 
 Podem veure que l'usuari anònim pot registrar-se i iniciar sessió. També pot explorar les destinacions, però no pot reservar viatges.
 
@@ -99,7 +100,8 @@ Podem veure que l'usuari anònim pot registrar-se i iniciar sessió. També pot 
 
 La següent imatge mostra la vista de la pàgina web per a un usuari registrat:
 
-![Vista User](/Diagrames/vista_user.jpg)
+![Vista User](/Wonderful_Travel/img/readme/conLogin.png)
+![Vista User](/Wonderful_Travel/img/readme/conLogin2.png)
 
 Podem veure que l'usuari registrat pot tancar sessió, explorar les destinacions, reservar viatges, cancel·lar les reserves i veure les reserves realitzades.
 
