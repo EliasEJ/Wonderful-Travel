@@ -183,7 +183,7 @@ if (isset($_SESSION['email'])) {
             </div>
             <br>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="descompte" onchange="canviPreu()">
+              <input type="checkbox" class="form-check-input" id="descompte" onchange="canviPreu()" disabled>
               <label class="form-check-label theme-label" for="descompte">Descompte 20%</label>
             </div>
             <br>
@@ -196,8 +196,8 @@ if (isset($_SESSION['email'])) {
             } else {
               echo '<script language="javascript">document.getElementsByClassName("w-100 btn btn-primary btn-lg")[0].setAttribute("disabled", "true");</script>';
             ?> <p class="center"><i><u>Inicia sessió per poder afegir el teu vol !</u></i></p> <?php
-                                                                                                  }
-                                                                                                    ?>
+            }
+              ?>
             <hr class="my-4">
           </form>
 

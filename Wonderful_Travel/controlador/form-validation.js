@@ -196,6 +196,14 @@ function canviPreu() {
   let descompte = document.getElementById("descompte").checked;
 
   numPersones = parseInt(numPersones);
+
+  if(numPersones >= 5){
+    document.getElementById("descompte").checked = true;
+    descompte = true;
+  }else {
+    document.getElementById("descompte").checked = false;
+    descompte = false;
+  }
   let preuFinal = preuOriginal;
 
   if (descompte == true) {
