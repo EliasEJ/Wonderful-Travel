@@ -24,7 +24,7 @@ El nostre projecte consisteix en una plataforma web per a la reserva de viatges.
 
 ### Requeriments funcionals
 
-- Els usuaris podran registrar-se i iniciar sessió.
+- *Els usuaris podran registrar-se i iniciar sessió.*
 - Els usuaris podran explorar les diferents destinacions.
 - Els usuaris podran reservar viatges.
 - Els usuaris podran cancel·lar les reserves.
@@ -50,4 +50,10 @@ En el nostre projecte hem utilitzat les següents tecnologies:
 - PHP
 - MySQL
 
+Per crear el nostre projecte hem utilitzat PHP per a crear la lògica de la nostra pàgina web. També hem utilitzat MySQL per a crear la base de dades del nostre projecte.
 
+### Diagrama de casos d'ús
+
+La següent imatge mostra el diagrama de casos d'ús del nostre projecte:
+
+![Diagrama de casos d'ús](/Diagrames/casos_us.png)
