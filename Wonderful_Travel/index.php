@@ -125,7 +125,7 @@ if (isset($_SESSION['email'])) {
 
           <div class="col-12">
             <label for="telf" class="form-label theme-label">Telèfon</label>
-            <input type="text" class="form-control" id="telf" name="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="9">
+            <input type="text" class="form-control" id="telf" name="telf" placeholder="" required onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" minlength="9" maxlength="9">
           </div>
 
           <br>
@@ -158,8 +158,12 @@ if (isset($_SESSION['email'])) {
     </main>
   </div>
   <div class="reserves">
+    <h4 class="theme-title-filter">Filtrar per:</h4>
     <?php
       require_once 'model/model.mostrarReserves.php';
+      ?><button class="filtrar-btn" type="button" name="filtrarPreu">Preu</button><br>
+      <button class="filtrar-btn" type="button" name="filtrarData">Data</button>
+      <?php
       //mostrar reserves
       mostrarReserves($email?? "");
     ?>

@@ -5,10 +5,6 @@ require_once 'controlador.comprovacions.php';
 
 //Agafem l'id i el token de la url i la guardem abans de que canvi
 session_start();
-if(!isset($_SESSION['idR'])){
-    $_SESSION['idR'] = $_GET['id'];
-    $_SESSION['tokenR'] = $_GET['token'];
-}
 
 function comprovacionsCanviarPass(){
     $id = $_GET['id'];
@@ -18,9 +14,9 @@ function comprovacionsCanviarPass(){
     obtenirToken($id);
 
     if(isset($_POST['canviar'])){
-        $actualPassword = $_POST['actualPass'];
+        $actualPassword = htmlspecialchars($_POST['actualPass']);
         $password1 = comprovarPassword($_POST['newPass']);
-        $password2 = $_POST['confirmNewPass'];
+        $password2 = htmlspecialchars($_POST['confirmNewPass']);
 
         if(comprovarActualPass($actualPassword, $id)){
             if(!empty($password1) || !empty($password2)){

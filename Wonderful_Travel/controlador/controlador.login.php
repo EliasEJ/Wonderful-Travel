@@ -5,8 +5,8 @@ require_once 'controlador.comprovacions.php';
 
 if(isset($_POST['login'])){
     function comprovacionsL(){
-        $email = comprovarEmail($_POST['emailL']);
-        $password = comrpovarPassL($_POST['passwordL']);
+        $email = comprovarEmail(htmlspecialchars($_POST['emailL']));
+        $password = comrpovarPassL(htmlspecialchars($_POST['passwordL']));
 
         if($email && comprovarEmailVerdader($email) && $password){
             $desencryptedPassword = password_verify($password, hashPassword($email));
