@@ -1,13 +1,13 @@
 <?php
 require_once 'conn.php';
 
-function mostrarReserves($email)
-{
+function mostrarReserves($email){
     $conn = con();
     $sql = $conn->prepare('SELECT * FROM reserves');
     $sql->execute();
     $resultat = $sql->fetchAll();
     if (count($resultat) > 0) {
+        //taula
         echo '<div class="container">';
         echo '<h2 class="theme-title">Reserves</h2>';
         echo '<table class="table table-striped">';
@@ -31,7 +31,7 @@ function mostrarReserves($email)
             $reserva['desti'],
         ));
         $resultatImg = $sql->fetch();
-        echo '<td><img src="' . $resultatImg['imatge'] . '" width="10px"></td>';
+        echo '<td><img src="' . $resultatImg['imatge'] . '" width="15px"></td>';
         echo '<td>' . $reserva['preu'] . '</td>';
         echo '<td>' . $reserva['nom'] . '</td>';
         echo '<td>' . $reserva['telf'] . '</td>';
@@ -55,5 +55,12 @@ function mostrarReserves($email)
     }else{
         //Aquí es pot mostrar que no hi ha reserves, no ho volem en el nostre cas
     }
+}
+function ordenarPer($array, $camp){
+    usort($array, function ($a, $b) use ($camp) {
+        return $a[$camp] <=> $b[$camp];
+    });
+
+    return $array;
 }
 ?>

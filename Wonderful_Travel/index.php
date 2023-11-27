@@ -158,8 +158,12 @@ if (isset($_SESSION['email'])) {
     </main>
   </div>
   <div class="reserves">
+    <h4 class="theme-title-filter">Filtrar per:</h4>
     <?php
       require_once 'model/model.mostrarReserves.php';
+      ?><button class="filtrar-btn" type="button" name="filtrarPreu">Preu</button><br>
+      <button class="filtrar-btn" type="button" name="filtrarData">Data</button>
+      <?php
       //mostrar reserves
       mostrarReserves($email?? "");
     ?>
