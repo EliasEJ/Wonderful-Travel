@@ -1,7 +1,7 @@
 <?php
 require_once 'conn.php';
 
-function mostrarReserves()
+function mostrarReserves($email)
 {
     $conn = con();
     $sql = $conn->prepare('SELECT * FROM reserves');
@@ -31,7 +31,16 @@ function mostrarReserves()
         echo '<td>' . $reserva['telf'] . '</td>';
         echo '<td>' . $reserva['numPersones'] . '</td>';
         echo '<td>' . $reserva['dataReserva'] . '</td>';
-        echo '<td><a href="vista/eliminarReserva.vista.php?id=' . $reserva['id'] . '">Eliminar reserva<i class="fas fa-trash-alt"></i></a></td>';
+        $saberAdmin = $conn->prepare('SELECT usuari FROM reserves WHERE usuari = ?');
+        $saberAdmin->execute(array(
+            $email,
+        ));
+        $resultatAdmin = $saberAdmin->fetch();
+        if ($resultatAdmin['usuari']?? "" == $email && isset($_SESSION['email'])) {
+            echo '<td><a href="vista/eliminarReserva.vista.php?id=' . $reserva['id'] . '">Eliminar reserva<i class="fas fa-trash-alt"></i></a></td>';
+        }else {
+            echo '<td></td>';
+        }
         echo '</tr>';
         }
         echo '</tbody>';

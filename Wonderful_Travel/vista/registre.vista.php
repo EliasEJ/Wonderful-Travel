@@ -71,7 +71,7 @@ require_once '../controlador/controlador.registre.php';
             </div>
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-block" type="submit" name="register">Registre</button>
+              <button class="btn btn-info btn-block" type="submit" name="register">Registrar-te</button>
               <button class="btn btn-info btn-block" type="button" name="tornarR" onclick="window.location.href='../'">Tornar</button><br><br>
               <p>Tens una compte? <a href="./login.vista.php" class="link-info">Inicia sessió aquí</a></p>
             </div>
