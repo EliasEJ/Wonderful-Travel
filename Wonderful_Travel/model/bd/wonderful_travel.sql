@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2023 a las 16:54:14
+-- Tiempo de generación: 27-11-2023 a las 18:24:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,24 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `wonderful_travel`
 --
+DROP DATABASE IF EXISTS `wonderful_travel`;
 CREATE DATABASE IF NOT EXISTS `wonderful_travel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `wonderful_travel`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `dadesusuaris`
---
-
-DROP TABLE IF EXISTS `dadesusuaris`;
-CREATE TABLE IF NOT EXISTS `dadesusuaris` (
-  `id_usuari` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(30) NOT NULL COMMENT 'Nom de l''usuari.',
-  `telefon` char(9) NOT NULL COMMENT 'Telefon de l''usuari.',
-  `numPersones` tinyint(4) NOT NULL COMMENT 'Número de persones que hi aniran al viatge.',
-  `descompte` tinyint(1) NOT NULL COMMENT 'L''usuari elegeix si vol descompte o no.',
-  PRIMARY KEY (`id_usuari`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,14 +31,13 @@ CREATE TABLE IF NOT EXISTS `dadesusuaris` (
 --
 
 DROP TABLE IF EXISTS `destiviatges`;
-CREATE TABLE IF NOT EXISTS `destiviatges` (
+CREATE TABLE `destiviatges` (
   `id_viatge` int(11) NOT NULL,
   `destiContinent` varchar(20) NOT NULL COMMENT 'Continent on viatjarà l''usuari.',
   `destiPais` varchar(30) NOT NULL COMMENT 'País on viatjarà l''usuari.',
   `preu` float NOT NULL COMMENT 'Preu del viatge.',
   `imatge` text NOT NULL COMMENT 'Imatge que es mostrarà quan s''elegeixi destiContinent i destiPais.',
-  `dataDisponible` date NOT NULL COMMENT 'Data que elegirà l''usuari per anar de viatge.',
-  PRIMARY KEY (`id_viatge`)
+  `dataDisponible` date NOT NULL COMMENT 'Data que elegirà l''usuari per anar de viatge.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -99,8 +83,8 @@ INSERT INTO `destiviatges` (`id_viatge`, `destiContinent`, `destiPais`, `preu`, 
 --
 
 DROP TABLE IF EXISTS `reserves`;
-CREATE TABLE IF NOT EXISTS `reserves` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reserves` (
+  `id` int(11) NOT NULL,
   `usuari` varchar(120) NOT NULL,
   `dataReserva` date NOT NULL,
   `desti` varchar(50) NOT NULL,
@@ -108,9 +92,8 @@ CREATE TABLE IF NOT EXISTS `reserves` (
   `nom` varchar(50) NOT NULL,
   `telf` varchar(9) NOT NULL,
   `numPersones` tinyint(4) NOT NULL,
-  `img` varchar(150) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `img` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `reserves`
@@ -126,20 +109,52 @@ INSERT INTO `reserves` (`id`, `usuari`, `dataReserva`, `desti`, `preu`, `nom`, `
 --
 
 DROP TABLE IF EXISTS `usuaris`;
-CREATE TABLE IF NOT EXISTS `usuaris` (
+CREATE TABLE `usuaris` (
+  `id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL COMMENT 'email para registrarse',
-  `password` varchar(150) NOT NULL COMMENT 'password encriptada',
-  PRIMARY KEY (`email`)
+  `email` varchar(50) NOT NULL,
+  `password` text NOT NULL,
+  `token` text NOT NULL,
+  `token_time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuaris`
+-- Índices para tablas volcadas
 --
 
-INSERT INTO `usuaris` (`username`, `email`, `password`) VALUES
-('e.jerari', 'elyass909@gmail.com', '$2y$10$LGsGjLNTns/aXaIcDLEeRuCzBxvlBCeioFaExNDSsFm3a6u2/AOHa'),
-('e.jerariw', 'elyass909@gmail.comd', '$2y$10$RY32MtaQTUUE51DJUtMAH.cOcRUkM7zbtFy/om..tsu6Bino7JM6C');
+--
+-- Indices de la tabla `destiviatges`
+--
+ALTER TABLE `destiviatges`
+  ADD PRIMARY KEY (`id_viatge`);
+
+--
+-- Indices de la tabla `reserves`
+--
+ALTER TABLE `reserves`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuaris`
+--
+ALTER TABLE `usuaris`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `reserves`
+--
+ALTER TABLE `reserves`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT de la tabla `usuaris`
+--
+ALTER TABLE `usuaris`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

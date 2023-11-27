@@ -1,17 +1,15 @@
 <?php
 require_once 'conn.php';
 
-function mostrarReserves($email)
+function mostrarReserves()
 {
     $conn = con();
-    $sql = $conn->prepare('SELECT * FROM reserves WHERE usuari = ?');
-    $sql->execute(array(
-        $email,
-    ));
+    $sql = $conn->prepare('SELECT * FROM reserves');
+    $sql->execute();
     $resultat = $sql->fetchAll();
     if (count($resultat) > 0) {
         echo '<div class="container">';
-        echo '<h2 class="center">Reserves</h2>';
+        echo '<h2 class="theme-title">Reserves</h2>';
         echo '<table class="table table-striped">';
         echo '<thead>';
         echo '<tr>';
@@ -21,7 +19,7 @@ function mostrarReserves($email)
         echo '<th scope="col">Telèfon</th>';
         echo '<th scope="col">Persones</th>';
         echo '<th scope="col">Data</th>';
-        echo '<th scope="col">Eliminar</th>';
+        echo '<th scope="col"></th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
@@ -33,7 +31,7 @@ function mostrarReserves($email)
         echo '<td>' . $reserva['telf'] . '</td>';
         echo '<td>' . $reserva['numPersones'] . '</td>';
         echo '<td>' . $reserva['dataReserva'] . '</td>';
-        echo '<td><a href="model/model.eliminarReserva.php?id=' . $reserva['id'] . '">Eliminar<i class="fas fa-trash-alt"></i></a></td>';
+        echo '<td><a href="vista/eliminarReserva.vista.php?id=' . $reserva['id'] . '">Eliminar reserva<i class="fas fa-trash-alt"></i></a></td>';
         echo '</tr>';
         }
         echo '</tbody>';
