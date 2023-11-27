@@ -22,7 +22,6 @@ if (isset($_SESSION['email'])) {
 
   <script>
     var destiData = <?php echo json_encode($_SESSION['destiData']); ?>;
-    console.log(destiData);
   </script>
 
   <!-- Bootstrap core CSS -->
@@ -129,7 +128,7 @@ if (isset($_SESSION['email'])) {
 
             <div class="row g-3">
               <div class="col-sm-6">
-                <label for="data" class="form-label theme-label">Data</label>
+                <label for="dataReserva" class="form-label theme-label">Data</label>
                 <input type="date" class="form-control" id="dataReserva" name="dataReserva" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
               </div>
 
@@ -189,7 +188,6 @@ if (isset($_SESSION['email'])) {
             </div>
             <br>
             <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit">Afegir</button>
-
 
             <?php
             //Si l'usuari ha iniciat sessió, es desbloqueja el botó d'afegir
