@@ -200,11 +200,11 @@ function canviPreu() {
   numPersones = parseInt(numPersones);
 
   if(numPersones >= 5){
-    document.getElementById("descompte").checked = true;
     descompte = true;
+    document.getElementById("descompte").checked = true;
   }else {
-    document.getElementById("descompte").checked = false;
     descompte = false;
+    document.getElementById("descompte").checked = false;
   }
   let preuFinal = preuOriginal;
 
