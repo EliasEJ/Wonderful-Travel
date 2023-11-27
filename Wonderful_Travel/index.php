@@ -124,7 +124,7 @@ if (isset($_SESSION['email'])) {
           <h4 class="mb-3 theme-label">Dades del viatge</h4>
 
           <!-- Formulari principal dades viatge. -->
-          <form class="needs-validation" method="post" novalidate>
+          <form class="needs-validation" method="post" action="controlador/form-validation.php" novalidate>
 
             <div class="row g-3">
               <div class="col-sm-6">
@@ -157,8 +157,8 @@ if (isset($_SESSION['email'])) {
             </div>
 
             <div class="col-sm-6">
-              <label for="preu" class="form-label theme-label">Preu</label>
-              <input type="text" class="form-control" id="preu" name="preu" placeholder="" disabled>
+              <label for="preuLabel" class="form-label theme-label">Preu</label>
+              <input type="text" class="form-control" id="preu" name="preu" placeholder="" readonly>
             </div>
 
             <br>
