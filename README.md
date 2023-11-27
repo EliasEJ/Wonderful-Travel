@@ -113,7 +113,7 @@ En el nostre projecte no hi ha cap vista per a l'administrador. Ja que l'adminis
 
 La següent imatge mostra el diagrama de la base de dades del nostre projecte:
 
-![Diagrama de BDD](/Diagrames/bdd.jpg)
+![Diagrama de BDD](/Diagrames/bdd.png)
 
 Podem veure que la base de dades està dividida en tres taules.
 
