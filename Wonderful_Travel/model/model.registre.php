@@ -47,10 +47,9 @@ function insertarUsuari($username, $email, $password){
             $email
         ));
         ?>  <div class="alert alert-success" role="alert">
-            L'usuari $username s'ha registrat correctament
+                L'usuari $username s'ha registrat correctament
             </div>
         <?php
-        sleep(3);
     }catch(PDOException $e){
         echo "Error: " . $e->getMessage();
     }

@@ -1,3 +1,6 @@
+<?php
+require_once '../controlador/controlador.recuperarContrasenya.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,16 +27,18 @@
                         </div>
 
                         <div class="pt-1 mb-4">
-                        <button class="btn btn-info btn-block" type="submit" name="login">Login</button>
-                        <button class="btn btn-info btn-block" type="button" name="tornar" onclick="window.location.href='../'">Tornar</button>
+                        <button class="btn btn-info btn-block" type="submit" name="login">Enviar</button>
+                        <button class="btn btn-info btn-block" type="button" name="tornar" onclick="window.location.href='login.vista.php'">Tornar</button>
                         </div>
 
                         <div class="pt-1 mb-4">
-                            <?php
-                                if(isset($_POST['login'])){
-                                    comprovacionsL();
-                                }
-                            ?>
+                            <i><u class="errorMessage">
+                                <?php
+                                    if(isset($_POST['login'])){
+                                        comprovacionsL();
+                                    }
+                                ?>
+                            </u></i>
                         </div>
                     </form>
                     </div>

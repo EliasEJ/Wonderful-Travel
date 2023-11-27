@@ -7,8 +7,12 @@ if(isset($_POST['register'])){
         $email = comprovarEmail($_POST['emailR']);
         $username = comprovarUsername($_POST['usernameR']);
         $password1 = comprovarPassword($_POST['passwordR1']);
-        $password2 = comprovarPassword($_POST['passwordR2']);
+        $password2 = $_POST['passwordR2'];
     
+        if(empty($password1) || empty($password2)){
+            echo "Una de les contrasenyes està buida<hr>";
+        }
+
         if($email && $username && $password1 && $password2){
             if($password1 == $password2){
                 $password = password_hash($password1, PASSWORD_DEFAULT);
@@ -21,13 +25,13 @@ if(isset($_POST['register'])){
                             insertarUsuari($username, $email, $password);
                             header("Location: ../vista/login.vista.php");
                         }else{
-                            echo "<br>El email ja existeix";
+                            echo "El email ja existeix<hr>";
                         }
                     }else{
-                        echo "<br>El nom d'usuari ja existeix";
+                        echo "El nom d'usuari ja existeix<hr>";
                     }
                 }
-            }
+            }else echo "Les contrasenyes no coincideixen<hr>";
         }
     }
 }

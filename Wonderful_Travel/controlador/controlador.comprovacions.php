@@ -1,15 +1,26 @@
 <?php
 function comprovarEmail($email){
-    if(empty($email)){
-        echo "<br>El email no pot estar buit";
+    if(empty($email) || !comprovarEmailVerdader($email)){
+        echo "El correu electrònic no pot estar buit i ha de ser correcte<hr>";
+        return false;
     }else{
         return $email;
     }
 }
 
+function comprovarEmailVerdader($email){
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 function comprovarUsername($username){
     if(empty($username)){
-        echo "<br>El nom d'usuari no pot estar buit";
+        echo "El nom d'usuari no pot estar buit<hr>";
+        return false;
     }else{
         return $username;
     }
@@ -17,48 +28,23 @@ function comprovarUsername($username){
 
 function comprovarPassword($password){
     if(empty($password)){
-        echo "<br>La contrasenya no pot estar buida";
+        return false;
     }else{
-        if(strlen($password) < 4 || strlen($password) > 15){
-            echo "<br>La contrasenya ha de tenir entre 4 i 15 caràcters";
+        if(strlen($password) < 4 || strlen($password) > 15 || !preg_match('`[a-z]`',$password) || !preg_match('`[A-Z]`',$password) || !preg_match('`[0-9]`',$password)){
+            echo "La contrasenya ha de tenir entre 4 i 15 caràcters, almenys una lletra minúscula i majúscula i un número<hr>";
         }else{
-            if(!preg_match('`[a-z]`',$password)){
-                echo "<br>La contrasenya ha de tenir almenys una lletra minúscula";
-            }else{
-                if(!preg_match('`[A-Z]`',$password)){
-                    echo "<br>La contrasenya ha de tenir almenys una lletra majúscula";
-                }else{
-                    if(!preg_match('`[0-9]`',$password)){
-                        echo "<br>La contrasenya ha de tenir almenys un número";
-                    }else{
-                        return $password;
-                    }
-                }
-            }
+            return $password;
         }
     }
 }
-
 function comrpovarPassL($password){
     if(empty($password)){
-        echo "<br>La contrasenya no pot estar buida";
+        return false;
     }else{
-        if(strlen($password) < 4 || strlen($password) > 15){
-            echo "<br>Contrasenya incorrecta";
+        if(strlen($password) < 4 || strlen($password) > 15 || !preg_match('`[a-z]`',$password) || !preg_match('`[A-Z]`',$password) || !preg_match('`[0-9]`',$password)){
+            echo "Contrasenya incorrecta<hr>";
         }else{
-            if(!preg_match('`[a-z]`',$password)){
-                echo "<br>Contrasenya incorrecta";
-            }else{
-                if(!preg_match('`[A-Z]`',$password)){
-                    echo "<br>Contrasenya incorrecta";
-                }else{
-                    if(!preg_match('`[0-9]`',$password)){
-                        echo "<br>Contrasenya incorrecta";
-                    }else{
-                        return $password;
-                    }
-                }
-            }
+            return $password;
         }
     }
 }

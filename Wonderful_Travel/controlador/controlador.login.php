@@ -8,7 +8,7 @@ if(isset($_POST['login'])){
         $email = comprovarEmail($_POST['emailL']);
         $password = comrpovarPassL($_POST['passwordL']);
 
-        if($email && $password){
+        if($email && comprovarEmailVerdader($email) && $password){
             $desencryptedPassword = password_verify($password, hashPassword($email));
             if($desencryptedPassword){
                 //reCaptcha si sobra temps
@@ -17,8 +17,8 @@ if(isset($_POST['login'])){
                 $_SESSION['email'] = $email;
                 
                 header('Location: ../index.php');
-            }else echo "<br>Contrasenya incorrecta";
-        }
+            }else echo "Contrasenya incorrecta<hr>";
+        }else echo "Problema amb l'email o la contrasenya<hr>";
     }
 }
 

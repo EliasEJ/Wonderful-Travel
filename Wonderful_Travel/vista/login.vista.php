@@ -74,11 +74,13 @@ if(isset($_SESSION['email'])){
             <p>No tens compte? <a href="./registre.vista.php" class="link-info">Registrat aquí</a></p>
 
             <div class="pt-1 mb-4">
-              <?php
-                if(isset($_POST['login'])){
-                    comprovacionsL();
-                }
-              ?>
+              <i><u class="errorMessage">
+                <?php
+                  if(isset($_POST['login'])){
+                      comprovacionsL();
+                  }
+                ?>
+              </u></i>
             </div>
           </form>
         </div>

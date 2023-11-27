@@ -21,7 +21,7 @@ function hashPassword($email){
             if(isset($pass['password'])){
                 return $pass['password'];
             }
-        }else echo "L'usuari no existeix";
+        }else echo "L'usuari no existeix<hr>";
     }catch(PDOException $e){
         echo "Error: " . $e->getMessage();
     }
