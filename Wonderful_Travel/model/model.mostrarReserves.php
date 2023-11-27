@@ -25,7 +25,13 @@ function mostrarReserves($email)
         echo '<tbody>';
         foreach ($resultat as $reserva) {
         echo '<tr>';
-        echo '<td>' . $reserva['desti'] . '</td>';
+        //Buscar imatge
+        $sql = $conn->prepare('SELECT imatge FROM destiviatges WHERE destiPais = ?');
+        $sql->execute(array(
+            $reserva['desti'],
+        ));
+        $resultatImg = $sql->fetch();
+        echo '<td><img src="' . $resultatImg['imatge'] . '" width="10px"></td>';
         echo '<td>' . $reserva['preu'] . '</td>';
         echo '<td>' . $reserva['nom'] . '</td>';
         echo '<td>' . $reserva['telf'] . '</td>';
