@@ -14,9 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $nom = $_POST['nom'];
     $telf = $_POST['telf'];
     $numPersones = $_POST['numPersones'];
-    $img = $_POST['imgDesti'];
+    $img = $_POST['imgSrc'];
 
-    afegir($email, $data, $desti, $preu, $nom, $telf, $numPersones);
+    afegir($email, $data, $desti, $preu, $nom, $telf, $numPersones, $img);
     header("Location: ../index.php");
 }
 ?>

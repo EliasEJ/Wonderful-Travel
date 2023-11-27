@@ -176,8 +176,10 @@ function imatgePais() {
 
   if (destiData[destiPais]) {
     img.src = destiData[destiPais].imatge;
+    document.getElementById('imgSrc').value = img.src;
   }
 }
+
 
 let preuOriginal = null;
 

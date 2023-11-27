@@ -153,6 +153,7 @@ if (isset($_SESSION['email'])) {
               <div class="col-md-5">
                 <label for="imgDesti" class="form-label"><br></label>
                 <img id="imgDesti" width="100%">
+                <input type="hidden" id="imgSrc" name="imgSrc" value="">
               </div>
             </div>
 
