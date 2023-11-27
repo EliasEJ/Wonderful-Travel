@@ -157,7 +157,7 @@ if (isset($_SESSION['email'])) {
     </div>
     </main>
   </div>
-  <div>
+  <div class="reserves">
     <?php
       require_once 'model/model.mostrarReserves.php';
       //mostrar reserves

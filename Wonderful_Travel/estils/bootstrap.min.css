@@ -12023,3 +12023,7 @@ img:hover {
 .errorMessage{
     color: red;
 }
+
+.reserves{
+    width: 100%;
+}
