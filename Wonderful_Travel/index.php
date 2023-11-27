@@ -22,7 +22,6 @@ if (isset($_SESSION['email'])) {
 
   <script>
     var destiData = <?php echo json_encode($_SESSION['destiData']); ?>;
-    console.log(destiData);
   </script>
 
   <!-- Bootstrap core CSS -->

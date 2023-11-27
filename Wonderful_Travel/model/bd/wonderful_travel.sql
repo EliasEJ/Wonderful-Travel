@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2023 a las 16:29:14
+-- Tiempo de generación: 27-11-2023 a las 16:54:14
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -61,36 +61,36 @@ CREATE TABLE IF NOT EXISTS `destiviatges` (
 --
 
 INSERT INTO `destiviatges` (`id_viatge`, `destiContinent`, `destiPais`, `preu`, `imatge`, `dataDisponible`) VALUES
-(1, 'Europa', 'Espanya', 30, 'https://www.viajejet.com/wp-content/viajes/vista-nocturna-de-la-playa-de-la-barceloneta.jpg', '0000-00-00'),
-(2, 'Europa', 'Italia', 53, 'https://www.mycoyote.es/blog/wp-content/uploads/2018/05/viajar-italia.jpg', '0000-00-00'),
-(3, 'Europa', 'França', 45, 'https://th.bing.com/th/id/R.c6719763a32b368e0914e585e34a1ec6?rik=4KNFjqvcbMn7tw&riu=http%3a%2f%2fwww.viajaratope.com%2fimages%2fDestino-Francia.jpg&ehk=SI56%2bIbl0nprYFHEybWFBlL%2f0Zzci8LTtVl0t2wDI8Q%3d&risl=&pid=ImgRaw&r=0', '0000-00-00'),
-(4, 'Europa', 'Grècia', 74, 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2016/07/isole-greche-santorini-iStock-1139370277.jpg?v=429819', '0000-00-00'),
-(5, 'Europa', 'Alemanya', 64, 'https://www.guiadealemania.com/wp-content/uploads/2009/08/Frauenkirche_y_Nuevo_Ayuntamiento.jpg', '0000-00-00'),
-(6, 'Europa', 'Portugal', 55, 'https://www.wallpics.net/wp-content/uploads/2017/12/Lisbon-5-scaled.jpg', '0000-00-00'),
-(7, 'Asia', 'Japó', 146, 'https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg', '0000-00-00'),
-(8, 'Asia', 'Xina', 110, 'https://www.viajejet.com/wp-content/viajes/la-gran-muralla-china.jpg', '0000-00-00'),
-(9, 'Asia', 'Corea del Sud', 120, 'https://blog.grandvoyage.com/wp-content/uploads/2023/08/viaje-a-corea-del-sur-Seu%CC%81l-10.jpg', '0000-00-00'),
-(10, 'Asia', 'Vietnam', 130, 'https://blog.chapkadirect.es/wp-content/uploads/2022/09/mejores-cosas-que-ver-vietnam-scaled.jpeg', '0000-00-00'),
-(11, 'Asia', 'Filipines', 140, 'https://www.viajejet.com/wp-content/viajes/estambul.jpg', '0000-00-00'),
-(12, 'Asia', 'Tailàndia', 150, 'https://pro-api.descapada.com/storage/escapades_imagenes/Ud3FavxYzvPsDleRzbQKSKhP06ouJyphA3zhBkgl.jpg', '0000-00-00'),
-(13, 'Amèrica', 'Estats Units', 200, 'https://a.storyblok.com/f/55469/1176x732/0e58ba731f/us_-_2022.jpg', '0000-00-00'),
-(14, 'Amèrica', 'Brasil', 210, 'https://www.expreso.info/files/2021-10/Rio_de_Janeiro.jpg', '0000-00-00'),
-(15, 'Amèrica', 'Canadà', 220, 'https://studentworld.au/wp-content/uploads/2022/07/country_image_Canada-1024x687.jpg', '0000-00-00'),
-(16, 'Amèrica', 'Mèxic', 210, 'https://www.kayak.es/news/wp-content/uploads/sites/2/2022/08/DEST_MEXICO_MEXICO-CITY_ZOCALO_GettyImages-638921947.jpg', '0000-00-00'),
-(17, 'Amèrica', 'Argentina', 200, 'https://digitalhub.fifa.com/transform/f65ed923-9b64-4ba2-af70-c44345c61b59/Obelisco-Buenos-Aires-Argentina-celebrations', '0000-00-00'),
-(18, 'Amèrica', 'Perú', 190, 'https://www.viajejet.com/wp-content/viajes/peru.jpg', '0000-00-00'),
-(19, 'Àfrica', 'Egipte', 180, 'https://viajes-anita.com/wp-content/uploads/2023/04/Egipto-1024x1024.png', '0000-00-00'),
-(20, 'Àfrica', 'Marroc', 170, 'https://blog.grandvoyage.com/wp-content/uploads/2023/01/viajes-marruecos-casablanca.jpeg', '0000-00-00'),
-(21, 'Àfrica', 'Tunísia', 160, 'https://турпоиск.kiev.ua/images/contr/tunis.jpg', '0000-00-00'),
-(22, 'Àfrica', 'Senegal', 150, 'https://media.istockphoto.com/id/499051816/es/foto/resumen-de-dakar-desde-la-terraza-con-mirador.jpg?s=612x612&w=0&k=20&c=kg0qcd8CZ-mocd5rgr4pHjokksoB1Q8qR_6Ib04H7RE=', '0000-00-00'),
-(23, 'Àfrica', 'Mali', 140, 'https://lirp.cdn-website.com/f67061b6/dms3rep/multi/opt/9292582bbe2befac17644320b0bcbf41-640w.jpg', '0000-00-00'),
-(24, 'Àfrica', 'Etiòpia', 130, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdnNhriRZ5caq538QMAZlaJQagd4tOBFNcGg&usqp=CAU', '0000-00-00'),
-(25, 'Oceania', 'Austràlia', 180, 'https://www.intermundial.es/blog/wp-content/uploads/2022/03/mejores-ciudades-de-australia.jpg', '0000-00-00'),
-(26, 'Oceania', 'Nova Zelanda', 170, 'https://cadenaser.com/resizer/V-yainfi6WrSpqf9K6_Vs5swd6s=/736x414/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/4CH6HJSDMRJNLHRH4B6DTJP37U.jpg', '0000-00-00'),
-(27, 'Oceania', 'Micronèsia', 160, 'https://visaindex.s3-accelerate.amazonaws.com/wp-content/uploads/2023/05/08191803/Micronesia.webp', '0000-00-00'),
-(28, 'Oceania', 'Fiji', 150, 'https://digital.ihg.com/is/image/ihg/intercontinental-natadola-8801037826-2x1', '0000-00-00'),
-(29, 'Oceania', 'Samoa', 140, 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/61000/61991-Samoa.jpg', '0000-00-00'),
-(30, 'Oceania', 'Tonga', 130, 'https://depostal.travel/wp-content/uploads/2019/08/tonga-title.png', '0000-00-00');
+(1, 'Europa', 'Espanya', 30, 'img/conWebp/españa.webp', '0000-00-00'),
+(2, 'Europa', 'Italia', 60, 'img/conWebp/italia.webp', '0000-00-00'),
+(3, 'Europa', 'França', 70, 'img/conWebp/francia.webp', '0000-00-00'),
+(4, 'Europa', 'Grècia', 80, 'img/conWebp/grecia.webp', '0000-00-00'),
+(5, 'Europa', 'Alemanya', 100, 'img/conWebp/Alemanya.webp', '0000-00-00'),
+(6, 'Europa', 'Portugal', 80, 'img/conWebp/Portugal.webp', '0000-00-00'),
+(7, 'Asia', 'Japó', 800, 'img/conWebp/Japo.webp\r\n', '0000-00-00'),
+(8, 'Asia', 'Xina', 770, 'img/conWebp/Xina.webp', '0000-00-00'),
+(9, 'Asia', 'Corea del Sud', 810, 'img/conWebp/Corea.webp', '0000-00-00'),
+(10, 'Asia', 'Vietnam', 720, 'img/conWebp/Vietnam.webp', '0000-00-00'),
+(11, 'Asia', 'Filipines', 730, 'img/conWebp/Filipines.webp', '0000-00-00'),
+(12, 'Asia', 'Tailàndia', 690, 'img/conWebp/Tailandia.webp', '0000-00-00'),
+(13, 'Amèrica', 'Estats Units', 380, 'img/conWebp/EEUU.webp', '0000-00-00'),
+(14, 'Amèrica', 'Brasil', 480, 'img/conWebp/Brazil.webp', '0000-00-00'),
+(15, 'Amèrica', 'Canadà', 380, 'img/conWebp/Canada.webp', '0000-00-00'),
+(16, 'Amèrica', 'Mèxic', 450, 'img/conWebp/Mexico.webp', '0000-00-00'),
+(17, 'Amèrica', 'Argentina', 500, 'img/conWebp/Argentina.webp', '0000-00-00'),
+(18, 'Amèrica', 'Perú', 405, 'img/conWebp/peru.webp', '0000-00-00'),
+(19, 'Àfrica', 'Egipte', 280, 'img/conWebp/Egipto.webp', '0000-00-00'),
+(20, 'Àfrica', 'Marroc', 190, 'img/conWebp/marruecos.webp', '0000-00-00'),
+(21, 'Àfrica', 'Tunísia', 200, 'img/conWebp/tunisia.webp', '0000-00-00'),
+(22, 'Àfrica', 'Senegal', 304, 'img/conWebp/Senegal.webp', '0000-00-00'),
+(23, 'Àfrica', 'Mali', 404, 'img/conWebp/mali.webp', '0000-00-00'),
+(24, 'Àfrica', 'Etiòpia', 300, 'img/conWebp/Etiopia.webp', '0000-00-00'),
+(25, 'Oceania', 'Austràlia', 890, 'img/conWebp/australia.webp', '0000-00-00'),
+(26, 'Oceania', 'Nova Zelanda', 900, 'img/conWebp/zelanda.webp', '0000-00-00'),
+(27, 'Oceania', 'Micronèsia', 870, 'img/conWebp/Micronesia.webp', '0000-00-00'),
+(28, 'Oceania', 'Fiji', 900, 'img/conWebp/Fiji.webp', '0000-00-00'),
+(29, 'Oceania', 'Samoa', 870, 'img/conWebp/Samoa.webp', '0000-00-00'),
+(30, 'Oceania', 'Tonga', 845, 'img/conWebp/Tonga.webp', '0000-00-00');
 
 -- --------------------------------------------------------
 
