@@ -95,12 +95,6 @@ CREATE TABLE `reserves` (
   `img` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `reserves`
---
-
-INSERT INTO `reserves` (`id`, `usuari`, `dataReserva`, `desti`, `preu`, `nom`, `telf`, `numPersones`, `img`) VALUES
-(42, 'elyass909@gmail.com', '2023-11-27', 'Estats Units', '400 €', 'Elias', '323232', 2, 'https://a.storyblok.com/f/55469/1176x732/0e58ba731f/us_-_2022.jpg');
 
 -- --------------------------------------------------------
 
