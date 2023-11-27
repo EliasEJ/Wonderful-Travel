@@ -4,9 +4,9 @@ require_once 'controlador.comprovacions.php';
 
 if(isset($_POST['register'])){
     function comprovacionsR(){
-        $email = comprovarEmail($_POST['emailR']);
-        $username = comprovarUsername($_POST['usernameR']);
-        $password1 = comprovarPassword($_POST['passwordR1']);
+        $email = comprovarEmail(htmlspecialchars($_POST['emailR']));
+        $username = comprovarUsername(htmlspecialchars($_POST['usernameR']));
+        $password1 = comprovarPassword(htmlspecialchars($_POST['passwordR1']));
         $password2 = $_POST['passwordR2'];
     
         if(empty($password1) || empty($password2)){

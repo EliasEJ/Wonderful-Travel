@@ -8,13 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $email = $_SESSION['email'];
     }
     
-    $data = $_POST['dataReserva'];
-    $desti = $_POST['destiPais'];
-    $preu = $_POST['preu'];
-    $nom = $_POST['nom'];
-    $telf = $_POST['telf'];
-    $numPersones = $_POST['numPersones'];
-    $img = $_POST['imgSrc'];
+    $data = htmlspecialchars($_POST['dataReserva']);
+    $desti = htmlspecialchars($_POST['destiPais']);
+    $preu = htmlspecialchars($_POST['preu']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $telf = htmlspecialchars($_POST['telf']);
+    $numPersones = htmlspecialchars($_POST['numPersones']);
+    $img = htmlspecialchars($_POST['imgSrc']);
 
     afegir($email, $data, $desti, $preu, $nom, $telf, $numPersones, $img);
     header("Location: ../index.php");
