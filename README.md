@@ -56,4 +56,4 @@ Per crear el nostre projecte hem utilitzat PHP per a crear la lògica de la nost
 
 La següent imatge mostra el diagrama de casos d'ús del nostre projecte:
 
-![Diagrama de casos d'ús](/Diagrames/casos_us.png)
+![Diagrama de casos d'ús](/Diagrames/casos_us.jpg)
