@@ -16,12 +16,12 @@ if (isset($_POST['submit'])) {
     // $telf = $_POST['telf'];
     // $numPersones = $_POST['numPersones'];
     
-    // $data = '2022-12-31';
-    // $desti = 'Spain';
-    // $preu = '100';
-    // $nom = 'Test User';
-    // $telf = '123456789';
-    // $numPersones = '2';
+    $data = '2022-12-31';
+    $desti = 'Spain';
+    $preu = '100';
+    $nom = 'Test User';
+    $telf = '123456789';
+    $numPersones = '2';
     
     afegir($email, $data, $desti, $preu, $nom, $telf, $numPersones);
     header("Location: ../index.php");
