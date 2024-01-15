@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 --
 DROP DATABASE IF EXISTS `wonderful_travel`;
 CREATE DATABASE IF NOT EXISTS `wonderful_travel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `wonderful_travel`;
+USE `wonderfultravel`;
 
 -- --------------------------------------------------------
 

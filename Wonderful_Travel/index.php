@@ -79,7 +79,7 @@ if (isset($_SESSION['email'])) {
         <form class="needs-validation" method="post" action="controlador/form-validation.php" novalidate>
 
           <div class="row g-3">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <label for="dataReserva" class="form-label theme-label">Data</label>
               <input type="date" class="form-control" id="dataReserva" name="dataReserva" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required onchange='validarData()'>
             </div>
